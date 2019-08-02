@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerJ9fa0x3;
+namespace Container5ckff3b;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -1321,9 +1321,6 @@ class appDevDebugProjectContainer extends Container
         $instance->addListener('kernel.request', [0 => function () {
             return ${($_ = isset($this->services['debug.debug_handlers_listener']) ? $this->services['debug.debug_handlers_listener'] : $this->getDebug_DebugHandlersListenerService()) && false ?: '_'};
         }, 1 => 'configure'], 2048);
-        $instance->addListener('console.command', [0 => function () {
-            return ${($_ = isset($this->services['debug.debug_handlers_listener']) ? $this->services['debug.debug_handlers_listener'] : $this->getDebug_DebugHandlersListenerService()) && false ?: '_'};
-        }, 1 => 'configure'], 2048);
         $instance->addListener('kernel.request', [0 => function () {
             return ${($_ = isset($this->services['router_listener']) ? $this->services['router_listener'] : $this->getRouterListenerService()) && false ?: '_'};
         }, 1 => 'onKernelRequest'], 32);
@@ -2046,6 +2043,7 @@ class appDevDebugProjectContainer extends Container
         'kernel.cache_dir' => false,
         'kernel.logs_dir' => false,
         'kernel.bundles_metadata' => false,
+        'images_directory' => false,
         'session.save_path' => false,
         'validator.mapping.cache.file' => false,
         'profiler.storage.dsn' => false,
@@ -2141,6 +2139,7 @@ class appDevDebugProjectContainer extends Container
                     'namespace' => 'Symfony\\Bundle\\WebServerBundle',
                 ],
             ]; break;
+            case 'images_directory': $value = ($this->targetDirs[3].'/web/images'); break;
             case 'session.save_path': $value = ($this->targetDirs[3].'/var/sessions/dev'); break;
             case 'validator.mapping.cache.file': $value = ($this->targetDirs[0].'/validation.php'); break;
             case 'profiler.storage.dsn': $value = ('file:'.$this->targetDirs[0].'/profiler'); break;

@@ -62,7 +62,7 @@ class __TwigTemplate_3b73b670aebfd51fda714711d369789ed8e6f11386aeeee3615d5603c22
         echo "    <form class=\"form-signin\" action=\"";
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("login");
         echo "\" method=\"POST\">
-        <h2 class=\"form-signin-heading\">Please sign in</h2>
+        <h2 class=\"form-signin-heading\">Please sign in</h2><br><br>
         <label for=\"_username\" class=\"sr-only\">Username</label>
         <input type=\"text\"
                id=\"_username\"
@@ -70,15 +70,16 @@ class __TwigTemplate_3b73b670aebfd51fda714711d369789ed8e6f11386aeeee3615d5603c22
                class=\"form-control\"
                placeholder=\"Username\"
                required
-               autofocus>
+               autofocus><br>
         <label for=\"_password\" class=\"sr-only\">Password</label>
         <input type=\"password\"
                id=\"_password\"
                name=\"_password\"
                class=\"form-control\"
                placeholder=\"Password\"
-               required>
-        <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button>
+               required><br>
+        <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button><br><br>
+        <a href=\"/register\" class=\"btn btn-secondary btn-block\" role=\"button\" aria-disabled=\"true\">Got to register</a>
     </form>
 ";
         
@@ -119,7 +120,7 @@ class __TwigTemplate_3b73b670aebfd51fda714711d369789ed8e6f11386aeeee3615d5603c22
 {% block body %}
 {% include('flash-messages.html.twig') %}
     <form class=\"form-signin\" action=\"{{ path('login') }}\" method=\"POST\">
-        <h2 class=\"form-signin-heading\">Please sign in</h2>
+        <h2 class=\"form-signin-heading\">Please sign in</h2><br><br>
         <label for=\"_username\" class=\"sr-only\">Username</label>
         <input type=\"text\"
                id=\"_username\"
@@ -127,15 +128,16 @@ class __TwigTemplate_3b73b670aebfd51fda714711d369789ed8e6f11386aeeee3615d5603c22
                class=\"form-control\"
                placeholder=\"Username\"
                required
-               autofocus>
+               autofocus><br>
         <label for=\"_password\" class=\"sr-only\">Password</label>
         <input type=\"password\"
                id=\"_password\"
                name=\"_password\"
                class=\"form-control\"
                placeholder=\"Password\"
-               required>
-        <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button>
+               required><br>
+        <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button><br><br>
+        <a href=\"/register\" class=\"btn btn-secondary btn-block\" role=\"button\" aria-disabled=\"true\">Got to register</a>
     </form>
 {% endblock %}", "security/login.html.twig", "C:\\xampp\\htdocs\\FSWD60-Adam-Gyarmati-CodeReview13\\app\\Resources\\views\\security\\login.html.twig");
     }

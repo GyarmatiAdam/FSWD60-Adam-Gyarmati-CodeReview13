@@ -34,19 +34,17 @@ class __TwigTemplate_d0bcac0961875c2f7d3988d32fd144b2b13f3461ff341a32096841eb526
 
         // line 1
         echo "<nav class=\"fixed-top navbar navbar-expand-lg navbar-dark bg-dark\">
-    <button type=\"button\" class=\"btn btn-danger\">
       ";
-        // line 3
+        // line 2
         if ($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", [])) {
-            // line 4
+            // line 3
             echo "        <a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\LogoutUrlExtension')->getLogoutPath("main"), "html", null, true);
             echo "\">Logout</a>
       ";
         }
-        // line 6
-        echo "    </button>
-  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+        // line 5
+        echo "  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
     <span class=\"navbar-toggler-icon\"></span>
   </button>
 
@@ -62,7 +60,7 @@ class __TwigTemplate_d0bcac0961875c2f7d3988d32fd144b2b13f3461ff341a32096841eb526
         <a class=\"nav-link\" href=\"/modify\">Modify</a>
       </li>
       ";
-        // line 36
+        // line 34
         echo "    </ul>
     <form class=\"form-inline my-2 my-lg-0\">
       <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
@@ -90,7 +88,7 @@ class __TwigTemplate_d0bcac0961875c2f7d3988d32fd144b2b13f3461ff341a32096841eb526
 
     public function getDebugInfo()
     {
-        return array (  66 => 36,  48 => 6,  42 => 4,  40 => 3,  36 => 1,);
+        return array (  64 => 34,  47 => 5,  41 => 3,  39 => 2,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -104,11 +102,9 @@ class __TwigTemplate_d0bcac0961875c2f7d3988d32fd144b2b13f3461ff341a32096841eb526
     public function getSourceContext()
     {
         return new Source("<nav class=\"fixed-top navbar navbar-expand-lg navbar-dark bg-dark\">
-    <button type=\"button\" class=\"btn btn-danger\">
       {% if app.user %}
         <a href=\"{{ logout_path('main') }}\">Logout</a>
       {% endif %}
-    </button>
   <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
     <span class=\"navbar-toggler-icon\"></span>
   </button>

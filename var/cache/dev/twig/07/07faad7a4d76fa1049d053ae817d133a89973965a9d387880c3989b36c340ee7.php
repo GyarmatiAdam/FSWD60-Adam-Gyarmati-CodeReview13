@@ -60,23 +60,28 @@ class __TwigTemplate_2d73e8fa9c9dc32e59dc01c052bafb9661e3e7288b10697f493210923e7
         echo "\" />
     </head>
     <body>
-    ";
+        ";
         // line 13
-        $this->loadTemplate("pages/navbar.html.twig", "base.html.twig", 13)->display($context);
-        // line 14
-        echo "        <div style=\"margin-top: 4rem; margin-bottom: 4rem;\" class=\"container\">
-
-            ";
+        if ($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", [])) {
+            // line 14
+            echo "            ";
+            $this->loadTemplate("pages/navbar.html.twig", "base.html.twig", 14)->display($context);
+            // line 15
+            echo "        ";
+        }
         // line 16
+        echo "                <div style=\"margin-top: 4rem; margin-bottom: 4rem;\" class=\"container\">
+            ";
+        // line 17
         $this->displayBlock('body', $context, $blocks);
-        // line 18
+        // line 19
         echo "
         </div>
 
         ";
-        // line 21
+        // line 22
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 26
+        // line 27
         echo "
     </body>
 </html>";
@@ -123,7 +128,7 @@ class __TwigTemplate_2d73e8fa9c9dc32e59dc01c052bafb9661e3e7288b10697f493210923e7
 
     }
 
-    // line 16
+    // line 17
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -132,7 +137,7 @@ class __TwigTemplate_2d73e8fa9c9dc32e59dc01c052bafb9661e3e7288b10697f493210923e7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 17
+        // line 18
         echo "            ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -142,7 +147,7 @@ class __TwigTemplate_2d73e8fa9c9dc32e59dc01c052bafb9661e3e7288b10697f493210923e7
 
     }
 
-    // line 21
+    // line 22
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -151,7 +156,7 @@ class __TwigTemplate_2d73e8fa9c9dc32e59dc01c052bafb9661e3e7288b10697f493210923e7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 22
+        // line 23
         echo "            <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
             <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
@@ -176,7 +181,7 @@ class __TwigTemplate_2d73e8fa9c9dc32e59dc01c052bafb9661e3e7288b10697f493210923e7
 
     public function getDebugInfo()
     {
-        return array (  155 => 22,  146 => 21,  136 => 17,  127 => 16,  110 => 9,  92 => 5,  80 => 26,  78 => 21,  73 => 18,  71 => 16,  67 => 14,  65 => 13,  58 => 10,  56 => 9,  52 => 8,  46 => 5,  40 => 1,);
+        return array (  160 => 23,  151 => 22,  141 => 18,  132 => 17,  115 => 9,  97 => 5,  85 => 27,  83 => 22,  78 => 19,  76 => 17,  73 => 16,  70 => 15,  67 => 14,  65 => 13,  58 => 10,  56 => 9,  52 => 8,  46 => 5,  40 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -201,9 +206,10 @@ class __TwigTemplate_2d73e8fa9c9dc32e59dc01c052bafb9661e3e7288b10697f493210923e7
         <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
     </head>
     <body>
-    {% include \"pages/navbar.html.twig\" %}
-        <div style=\"margin-top: 4rem; margin-bottom: 4rem;\" class=\"container\">
-
+        {% if app.user %}
+            {% include \"pages/navbar.html.twig\" %}
+        {% endif %}
+                <div style=\"margin-top: 4rem; margin-bottom: 4rem;\" class=\"container\">
             {% block body %}
             {% endblock %}
 

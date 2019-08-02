@@ -10,9 +10,10 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-    {% include "pages/navbar.html.twig" %}
-        <div style="margin-top: 4rem; margin-bottom: 4rem;" class="container">
-
+        {% if app.user %}
+            {% include "pages/navbar.html.twig" %}
+        {% endif %}
+                <div style="margin-top: 4rem; margin-bottom: 4rem;" class="container">
             {% block body %}
             {% endblock %}
 

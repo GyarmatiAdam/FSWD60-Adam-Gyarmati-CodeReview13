@@ -180,7 +180,7 @@ class PageController extends Controller
         $em->remove($events);
 
         $em->flush();
-        $this->addFlash('notice','Event has been removed!');
+        $this->addFlash('notice','Event has been removed');
 
         return $this->redirectToRoute('modifypage');    
     }
