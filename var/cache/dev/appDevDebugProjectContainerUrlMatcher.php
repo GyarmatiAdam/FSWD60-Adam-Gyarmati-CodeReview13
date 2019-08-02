@@ -137,6 +137,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, ['_route' => 'detailpage']), array (  '_controller' => 'AppBundle\\Controller\\PageController::detailAction',));
         }
 
+        // deletepage
+        if (0 === strpos($pathinfo, '/delete') && preg_match('#^/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'deletepage']), array (  '_controller' => 'AppBundle\\Controller\\PageController::deleteAction',));
+        }
+
         // editpage
         if (0 === strpos($pathinfo, '/edit') && preg_match('#^/edit/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, ['_route' => 'editpage']), array (  '_controller' => 'AppBundle\\Controller\\PageController::editAction',));

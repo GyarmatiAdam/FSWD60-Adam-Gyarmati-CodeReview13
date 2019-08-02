@@ -170,4 +170,19 @@ class PageController extends Controller
         // return $this->render('pages/editevent.html.twig');
     }
 
+    /**
+     * @Route("/delete/{id}", name="deletepage")
+     */
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $events = $em->getRepository('AppBundle:Events')->find($id);
+        $em->remove($events);
+
+        $em->flush();
+        $this->addFlash('notice','Event has been removed!');
+
+        return $this->redirectToRoute('modifypage');    
+    }
+
 }

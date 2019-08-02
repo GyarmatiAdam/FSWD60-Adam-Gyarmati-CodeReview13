@@ -70,24 +70,48 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
             // line 7
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventName", []), "html", null, true);
             echo "</td></tr>
-        <tr><td><img src=\"";
-            // line 8
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventImg", []), "html", null, true);
-            echo "\" class=\"rounded mx-auto d-block\" alt=\"image\"></td></tr>
         <tr><td>";
-            // line 9
+            // line 8
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDesc", []), "html", null, true);
             echo "</td><tr>
         <tr><td>";
-            // line 10
+            // line 9
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDate", []), "html", null, true);
             echo "</td></tr>
-        <tr><td><a href=\"edit/";
+        <tr><td>";
+            // line 10
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventImg", []), "html", null, true);
+            echo "</td></tr>
+        <tr><td>";
             // line 11
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventCapacity", []), "html", null, true);
+            echo "</td></tr>
+        <tr><td>";
+            // line 12
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventEmail", []), "html", null, true);
+            echo "</td></tr>
+        <tr><td>";
+            // line 13
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventPhone", []), "html", null, true);
+            echo "</td></tr>
+        <tr><td>";
+            // line 14
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventAdd", []), "html", null, true);
+            echo "</td></tr>
+        <tr><td>";
+            // line 15
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventUrl", []), "html", null, true);
+            echo "</td></tr>
+        <tr><td>";
+            // line 16
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventType", []), "html", null, true);
+            echo "</td></tr>    
+        <tr><td><a href=\"edit/";
+            // line 17
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", []), "html", null, true);
             echo "\" class=\"btn btn-default\">Edit</a>
         <a href=\"delete/";
-            // line 12
+            // line 18
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", []), "html", null, true);
             echo "\" class=\"btn btn-danger\">Delete</a></td></tr>
     ";
@@ -95,7 +119,7 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['event'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
+        // line 20
         echo "    </tbody>
     </table>
 </div>
@@ -120,7 +144,7 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
 
     public function getDebugInfo()
     {
-        return array (  99 => 14,  91 => 12,  87 => 11,  83 => 10,  79 => 9,  75 => 8,  71 => 7,  68 => 6,  64 => 5,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  123 => 20,  115 => 18,  111 => 17,  107 => 16,  103 => 15,  99 => 14,  95 => 13,  91 => 12,  87 => 11,  83 => 10,  79 => 9,  75 => 8,  71 => 7,  68 => 6,  64 => 5,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -140,9 +164,15 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
     {% for event in events %}
     <tbody>
         <tr><td>{{ event.eventName }}</td></tr>
-        <tr><td><img src=\"{{ event.eventImg }}\" class=\"rounded mx-auto d-block\" alt=\"image\"></td></tr>
         <tr><td>{{ event.eventDesc }}</td><tr>
         <tr><td>{{ event.eventDate}}</td></tr>
+        <tr><td>{{ event.eventImg}}</td></tr>
+        <tr><td>{{ event.eventCapacity}}</td></tr>
+        <tr><td>{{ event.eventEmail}}</td></tr>
+        <tr><td>{{ event.eventPhone}}</td></tr>
+        <tr><td>{{ event.eventAdd}}</td></tr>
+        <tr><td>{{ event.eventUrl}}</td></tr>
+        <tr><td>{{ event.eventType}}</td></tr>    
         <tr><td><a href=\"edit/{{event.id}}\" class=\"btn btn-default\">Edit</a>
         <a href=\"delete/{{event.id}}\" class=\"btn btn-danger\">Delete</a></td></tr>
     {% endfor %}
