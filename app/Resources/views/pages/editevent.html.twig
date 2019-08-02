@@ -1,8 +1,18 @@
 {% extends "base.html.twig" %}
 {% block body %}
 {% include('flash-messages.html.twig') %}
-<h2 class="page-header">Modify details</h2>
-{{form_start(form)}}
-{{form_widget(form)}}
-{{form_end(form)}}
+
+  <div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-8 addform">
+        <h2 class="page-header">Modify details</h2>
+        {{form_start(form)}}
+        {{form_widget(form)}}
+        {{form_end(form)}}
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+</div>
 {% endblock %}

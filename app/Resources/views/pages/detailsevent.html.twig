@@ -1,15 +1,24 @@
 {% extends "base.html.twig" %}
 {% block body %}
 {% include('flash-messages.html.twig') %}
-    <a class="btn btn-default" href="/">Back</a>
+  <div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-6">
+    <a class="btn btn-light" href="/">Back</a>
     <hr>
     <h2 class="page-header">{{events.eventName}}</h2>
        <ul class="list-group">
-            <li class="list-group-item">Capacity: {{events.eventCapacity}}</li>
-            <li class="list-group-item">Email: {{events.eventEmail}}</li>
-            <li class="list-group-item">Phone: {{eventPhone.}}</li>
-            <li class="list-group-item">Address: {{eventAdd.}}</li>
-            <li class="list-group-item">Website: {{eventUrl.}}</li>
-            <li class="list-group-item">Type: {{eventType.}}</li>
+            <li class="list-group-item"><h6>Capacity:</h6> {{events.eventCapacity}}</li>
+            <li class="list-group-item"><h6>Email:</h6> {{events.eventEmail}}</li>
+            <li class="list-group-item"><h6>Phone:</h6> {{events.eventPhone}}</li>
+            <li class="list-group-item"><h6>Address:</h6> {{events.eventAdd}}</li>
+            <li class="list-group-item"><h6>Website:</h6> {{events.eventUrl}}</li>
+            <li class="list-group-item"><h6>Type:</h6> {{events.eventType}}</li>
        </ul>
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+</div>
 {% endblock %}

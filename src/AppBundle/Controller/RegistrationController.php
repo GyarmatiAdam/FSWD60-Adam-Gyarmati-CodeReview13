@@ -23,7 +23,7 @@ class RegistrationController extends Controller
 
         $form = $this->createMemberRegistrationForm($member);
 
-        return $this->render('registration/register.html.twig', [
+        return $this->render('registration/register.html.twig', ['title' =>'register',
             'registration_form' => $form->createView(),
         ]);
     }

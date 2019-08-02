@@ -57,30 +57,47 @@ class __TwigTemplate_3b73b670aebfd51fda714711d369789ed8e6f11386aeeee3615d5603c22
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        $this->loadTemplate("flash-messages.html.twig", "security/login.html.twig", 4)->display($context);
-        // line 5
-        echo "    <form class=\"form-signin\" action=\"";
+        echo "  <div class=\"row\">
+    <div class=\"col-sm-3\">
+    </div>
+    <div class=\"col-sm-6\">
+
+
+";
+        // line 10
+        $this->loadTemplate("flash-messages.html.twig", "security/login.html.twig", 10)->display($context);
+        // line 11
+        echo "    <div class=\"addform\">
+        <form class=\"form-signin\" action=\"";
+        // line 12
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("login");
         echo "\" method=\"POST\">
-        <h2 class=\"form-signin-heading\">Please sign in</h2><br><br>
-        <label for=\"_username\" class=\"sr-only\">Username</label>
-        <input type=\"text\"
-               id=\"_username\"
-               name=\"_username\"
-               class=\"form-control\"
-               placeholder=\"Username\"
-               required
-               autofocus><br>
-        <label for=\"_password\" class=\"sr-only\">Password</label>
-        <input type=\"password\"
-               id=\"_password\"
-               name=\"_password\"
-               class=\"form-control\"
-               placeholder=\"Password\"
-               required><br>
-        <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button><br><br>
-        <a href=\"/register\" class=\"btn btn-secondary btn-block\" role=\"button\" aria-disabled=\"true\">Got to register</a>
-    </form>
+            <h2 class=\"form-signin-heading\">Please sign in</h2><br><br>
+            <label for=\"_username\" class=\"sr-only\">Username</label>
+            <input type=\"text\"
+                id=\"_username\"
+                name=\"_username\"
+                class=\"form-control\"
+                placeholder=\"Username\"
+                required
+                autofocus><br>
+            <label for=\"_password\" class=\"sr-only\">Password</label>
+            <input type=\"password\"
+                id=\"_password\"
+                name=\"_password\"
+                class=\"form-control\"
+                placeholder=\"Password\"
+                required><br>
+            <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button><br><br>
+            <a href=\"/register\" class=\"btn btn-secondary btn-block\" role=\"button\" aria-disabled=\"true\">Got to register</a><br>
+        </form>
+    </div>    
+    </div>
+    <div class=\"col-sm-3\">
+    </div>
+  </div>
+</div>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -102,7 +119,7 @@ class __TwigTemplate_3b73b670aebfd51fda714711d369789ed8e6f11386aeeee3615d5603c22
 
     public function getDebugInfo()
     {
-        return array (  62 => 5,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  73 => 12,  70 => 11,  68 => 10,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -118,27 +135,41 @@ class __TwigTemplate_3b73b670aebfd51fda714711d369789ed8e6f11386aeeee3615d5603c22
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
+  <div class=\"row\">
+    <div class=\"col-sm-3\">
+    </div>
+    <div class=\"col-sm-6\">
+
+
 {% include('flash-messages.html.twig') %}
-    <form class=\"form-signin\" action=\"{{ path('login') }}\" method=\"POST\">
-        <h2 class=\"form-signin-heading\">Please sign in</h2><br><br>
-        <label for=\"_username\" class=\"sr-only\">Username</label>
-        <input type=\"text\"
-               id=\"_username\"
-               name=\"_username\"
-               class=\"form-control\"
-               placeholder=\"Username\"
-               required
-               autofocus><br>
-        <label for=\"_password\" class=\"sr-only\">Password</label>
-        <input type=\"password\"
-               id=\"_password\"
-               name=\"_password\"
-               class=\"form-control\"
-               placeholder=\"Password\"
-               required><br>
-        <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button><br><br>
-        <a href=\"/register\" class=\"btn btn-secondary btn-block\" role=\"button\" aria-disabled=\"true\">Got to register</a>
-    </form>
+    <div class=\"addform\">
+        <form class=\"form-signin\" action=\"{{ path('login') }}\" method=\"POST\">
+            <h2 class=\"form-signin-heading\">Please sign in</h2><br><br>
+            <label for=\"_username\" class=\"sr-only\">Username</label>
+            <input type=\"text\"
+                id=\"_username\"
+                name=\"_username\"
+                class=\"form-control\"
+                placeholder=\"Username\"
+                required
+                autofocus><br>
+            <label for=\"_password\" class=\"sr-only\">Password</label>
+            <input type=\"password\"
+                id=\"_password\"
+                name=\"_password\"
+                class=\"form-control\"
+                placeholder=\"Password\"
+                required><br>
+            <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button><br><br>
+            <a href=\"/register\" class=\"btn btn-secondary btn-block\" role=\"button\" aria-disabled=\"true\">Got to register</a><br>
+        </form>
+    </div>    
+    </div>
+    <div class=\"col-sm-3\">
+    </div>
+  </div>
+</div>
+
 {% endblock %}", "security/login.html.twig", "C:\\xampp\\htdocs\\FSWD60-Adam-Gyarmati-CodeReview13\\app\\Resources\\views\\security\\login.html.twig");
     }
 }

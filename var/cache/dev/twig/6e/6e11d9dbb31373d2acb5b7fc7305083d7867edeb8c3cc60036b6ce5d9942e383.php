@@ -57,71 +57,129 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "<div class=\"table-responsive-sm\">
-    <table class=\"table table-strip\">
-    ";
-        // line 5
+        echo "  <div class=\"row\">
+    <div class=\"col-sm-2\">
+
+    </div>
+
+    <div class=\"col-sm-8\">
+    <table class=\"table modifytable \" style=\"margin:2rem; width:100%;\">
+";
+        // line 10
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["events"] ?? $this->getContext($context, "events")));
         foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
-            // line 6
-            echo "    <tbody>
-        <tr><td>";
-            // line 7
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventName", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 8
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDesc", []), "html", null, true);
-            echo "</td><tr>
-        <tr><td>";
-            // line 9
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDate", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 10
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventImg", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
             // line 11
+            echo "        <thead>
+            <tr>
+            <th scope=\"col\">#</th>
+            <th scope=\"col\">Name</th>
+            <th scope=\"col\">Date</th>
+            <th scope=\"col\">Capacity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope=\"row\"></th>
+            <td>";
+            // line 22
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventName", []), "html", null, true);
+            echo "</td>
+            <td>";
+            // line 23
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDate", []), "html", null, true);
+            echo "</td>
+            <td>";
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventCapacity", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 12
+            echo "</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+            <th scope=\"col\">#</th>
+            <th scope=\"col\">Email</th>
+            <th scope=\"col\">Phone</th>
+            <th scope=\"col\">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope=\"row\"></th>
+            <td>";
+            // line 38
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventEmail", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 13
+            echo "</td>
+            <td>";
+            // line 39
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventPhone", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 14
+            echo "</td>
+            <td>";
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventAdd", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 15
+            echo "</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+            <th scope=\"col\">#</th>
+            <th scope=\"col\">Website</th>
+            <th scope=\"col\">Type</th>
+            <th scope=\"col\">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope=\"row\"></th>
+            <td>";
+            // line 54
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventUrl", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 16
+            echo "</td>
+            <td>";
+            // line 55
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventType", []), "html", null, true);
-            echo "</td></tr>    
-        <tr><td><a href=\"edit/";
-            // line 17
+            echo "</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+            <th scope=\"col\">#</th>
+            <th colspan=\"3\" scope=\"col\">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope=\"row\"></th>
+            <td colspan=\"3\">";
+            // line 67
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDesc", []), "html", null, true);
+            echo "</td>
+            ";
+            // line 69
+            echo "            </tr>
+            <tr><td colspan=\"3\"><a href=\"edit/";
+            // line 70
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", []), "html", null, true);
-            echo "\" class=\"btn btn-default\">Edit</a>
-        <a href=\"delete/";
-            // line 18
+            echo "\" class=\"btn btn-success\">Edit</a>
+            <a href=\"delete/";
+            // line 71
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", []), "html", null, true);
             echo "\" class=\"btn btn-danger\">Delete</a></td></tr>
-    ";
+";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['event'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
-        echo "    </tbody>
-    </table>
+        // line 72
+        echo "    
+        </tbody>
+        </table><br><br>
+
+    </div>
+    <div class=\"col-sm-2\">
+
+    </div>
+  </div>
 </div>
 ";
         
@@ -144,7 +202,7 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
 
     public function getDebugInfo()
     {
-        return array (  123 => 20,  115 => 18,  111 => 17,  107 => 16,  103 => 15,  99 => 14,  95 => 13,  91 => 12,  87 => 11,  83 => 10,  79 => 9,  75 => 8,  71 => 7,  68 => 6,  64 => 5,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  174 => 72,  166 => 71,  162 => 70,  159 => 69,  155 => 67,  140 => 55,  136 => 54,  119 => 40,  115 => 39,  111 => 38,  94 => 24,  90 => 23,  86 => 22,  73 => 11,  69 => 10,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -159,25 +217,84 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
     {
         return new Source("{% extends \"base.html.twig\" %}
 {% block body %}
-<div class=\"table-responsive-sm\">
-    <table class=\"table table-strip\">
-    {% for event in events %}
-    <tbody>
-        <tr><td>{{ event.eventName }}</td></tr>
-        <tr><td>{{ event.eventDesc }}</td><tr>
-        <tr><td>{{ event.eventDate}}</td></tr>
-        <tr><td>{{ event.eventImg}}</td></tr>
-        <tr><td>{{ event.eventCapacity}}</td></tr>
-        <tr><td>{{ event.eventEmail}}</td></tr>
-        <tr><td>{{ event.eventPhone}}</td></tr>
-        <tr><td>{{ event.eventAdd}}</td></tr>
-        <tr><td>{{ event.eventUrl}}</td></tr>
-        <tr><td>{{ event.eventType}}</td></tr>    
-        <tr><td><a href=\"edit/{{event.id}}\" class=\"btn btn-default\">Edit</a>
-        <a href=\"delete/{{event.id}}\" class=\"btn btn-danger\">Delete</a></td></tr>
-    {% endfor %}
-    </tbody>
-    </table>
+  <div class=\"row\">
+    <div class=\"col-sm-2\">
+
+    </div>
+
+    <div class=\"col-sm-8\">
+    <table class=\"table modifytable \" style=\"margin:2rem; width:100%;\">
+{% for event in events %}
+        <thead>
+            <tr>
+            <th scope=\"col\">#</th>
+            <th scope=\"col\">Name</th>
+            <th scope=\"col\">Date</th>
+            <th scope=\"col\">Capacity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope=\"row\"></th>
+            <td>{{ event.eventName }}</td>
+            <td>{{ event.eventDate}}</td>
+            <td>{{ event.eventCapacity}}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+            <th scope=\"col\">#</th>
+            <th scope=\"col\">Email</th>
+            <th scope=\"col\">Phone</th>
+            <th scope=\"col\">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope=\"row\"></th>
+            <td>{{ event.eventEmail}}</td>
+            <td>{{ event.eventPhone}}</td>
+            <td>{{ event.eventAdd}}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+            <th scope=\"col\">#</th>
+            <th scope=\"col\">Website</th>
+            <th scope=\"col\">Type</th>
+            <th scope=\"col\">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope=\"row\"></th>
+            <td>{{ event.eventUrl}}</td>
+            <td>{{ event.eventType}}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+            <th scope=\"col\">#</th>
+            <th colspan=\"3\" scope=\"col\">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope=\"row\"></th>
+            <td colspan=\"3\">{{ event.eventDesc }}</td>
+            {# <tr><td>{{ event.eventImg}}</td></tr> #}
+            </tr>
+            <tr><td colspan=\"3\"><a href=\"edit/{{event.id}}\" class=\"btn btn-success\">Edit</a>
+            <a href=\"delete/{{event.id}}\" class=\"btn btn-danger\">Delete</a></td></tr>
+{% endfor %}    
+        </tbody>
+        </table><br><br>
+
+    </div>
+    <div class=\"col-sm-2\">
+
+    </div>
+  </div>
 </div>
 {% endblock %}", "pages/modify.html.twig", "C:\\xampp\\htdocs\\FSWD60-Adam-Gyarmati-CodeReview13\\app\\Resources\\views\\pages\\modify.html.twig");
     }

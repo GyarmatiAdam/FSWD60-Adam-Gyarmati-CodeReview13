@@ -57,9 +57,21 @@ class __TwigTemplate_289c1df462c08ac98171d2c786037a612e33c2c4de8dd64aa1374b98257
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    ";
+        echo "  <div class=\"row\">
+    <div class=\"col-sm-3\">
+    </div>
+    <div class=\"col-sm-6 addform\">
+        <h1>Register</h1>
+        ";
+        // line 9
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["registration_form"] ?? $this->getContext($context, "registration_form")), 'form');
         echo "
+        <br><a href=\"/login\" class=\"btn btn-secondary btn-block\" role=\"button\" aria-disabled=\"true\">Got to Login</a><br>
+    </div>
+    <div class=\"col-sm-3\">
+    </div>
+  </div>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -81,7 +93,7 @@ class __TwigTemplate_289c1df462c08ac98171d2c786037a612e33c2c4de8dd64aa1374b98257
 
     public function getDebugInfo()
     {
-        return array (  60 => 4,  51 => 3,  29 => 1,);
+        return array (  67 => 9,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -97,7 +109,18 @@ class __TwigTemplate_289c1df462c08ac98171d2c786037a612e33c2c4de8dd64aa1374b98257
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ form(registration_form) }}
+  <div class=\"row\">
+    <div class=\"col-sm-3\">
+    </div>
+    <div class=\"col-sm-6 addform\">
+        <h1>Register</h1>
+        {{ form(registration_form) }}
+        <br><a href=\"/login\" class=\"btn btn-secondary btn-block\" role=\"button\" aria-disabled=\"true\">Got to Login</a><br>
+    </div>
+    <div class=\"col-sm-3\">
+    </div>
+  </div>
+</div>
 {% endblock %}", "registration/register.html.twig", "C:\\xampp\\htdocs\\FSWD60-Adam-Gyarmati-CodeReview13\\app\\Resources\\views\\registration\\register.html.twig");
     }
 }

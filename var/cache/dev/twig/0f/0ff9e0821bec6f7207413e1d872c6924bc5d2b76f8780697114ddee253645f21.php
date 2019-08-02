@@ -59,22 +59,47 @@ class __TwigTemplate_e1b022f3bdc9f477500275838b47787ef76587add686f938b8fee396fe1
         // line 3
         $this->loadTemplate("flash-messages.html.twig", "pages/detailsevent.html.twig", 3)->display($context);
         // line 4
-        echo "    <a class=\"btn btn-default\" href=\"/\">Back</a>
+        echo "  <div class=\"row\">
+    <div class=\"col-sm-3\">
+    </div>
+    <div class=\"col-sm-6\">
+    <a class=\"sticky-top btn btn-light\" href=\"/\">Back</a>
     <hr>
     <h2 class=\"page-header\">";
-        // line 6
+        // line 10
         echo twig_escape_filter($this->env, $this->getAttribute(($context["events"] ?? $this->getContext($context, "events")), "eventName", []), "html", null, true);
         echo "</h2>
        <ul class=\"list-group\">
-               <li class=\"list-group-item\">Capacity: ";
-        // line 8
+            <li class=\"list-group-item\"><h6>Capacity:</h6> ";
+        // line 12
         echo twig_escape_filter($this->env, $this->getAttribute(($context["events"] ?? $this->getContext($context, "events")), "eventCapacity", []), "html", null, true);
         echo "</li>
-               <li class=\"list-group-item\">Email: ";
-        // line 9
+            <li class=\"list-group-item\"><h6>Email:</h6> ";
+        // line 13
         echo twig_escape_filter($this->env, $this->getAttribute(($context["events"] ?? $this->getContext($context, "events")), "eventEmail", []), "html", null, true);
         echo "</li>
+            <li class=\"list-group-item\"><h6>Phone:</h6> ";
+        // line 14
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["events"] ?? $this->getContext($context, "events")), "eventPhone", []), "html", null, true);
+        echo "</li>
+            <li class=\"list-group-item\"><h6>Address:</h6> ";
+        // line 15
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["events"] ?? $this->getContext($context, "events")), "eventAdd", []), "html", null, true);
+        echo "</li>
+            <li class=\"list-group-item\"><h6>Website:</h6> ";
+        // line 16
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["events"] ?? $this->getContext($context, "events")), "eventUrl", []), "html", null, true);
+        echo "</li>
+            <li class=\"list-group-item\"><h6>Type:</h6> ";
+        // line 17
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["events"] ?? $this->getContext($context, "events")), "eventType", []), "html", null, true);
+        echo "</li>
        </ul>
+    </div>
+    <div class=\"col-sm-3\">
+    </div>
+  </div>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -96,7 +121,7 @@ class __TwigTemplate_e1b022f3bdc9f477500275838b47787ef76587add686f938b8fee396fe1
 
     public function getDebugInfo()
     {
-        return array (  75 => 9,  71 => 8,  66 => 6,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  95 => 17,  91 => 16,  87 => 15,  83 => 14,  79 => 13,  75 => 12,  70 => 10,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -112,19 +137,26 @@ class __TwigTemplate_e1b022f3bdc9f477500275838b47787ef76587add686f938b8fee396fe1
         return new Source("{% extends \"base.html.twig\" %}
 {% block body %}
 {% include('flash-messages.html.twig') %}
-    <a class=\"btn btn-default\" href=\"/\">Back</a>
+  <div class=\"row\">
+    <div class=\"col-sm-3\">
+    </div>
+    <div class=\"col-sm-6\">
+    <a class=\"sticky-top btn btn-light\" href=\"/\">Back</a>
     <hr>
     <h2 class=\"page-header\">{{events.eventName}}</h2>
        <ul class=\"list-group\">
-               <li class=\"list-group-item\">Capacity: {{events.eventCapacity}}</li>
-               <li class=\"list-group-item\">Email: {{events.eventEmail}}</li>
+            <li class=\"list-group-item\"><h6>Capacity:</h6> {{events.eventCapacity}}</li>
+            <li class=\"list-group-item\"><h6>Email:</h6> {{events.eventEmail}}</li>
+            <li class=\"list-group-item\"><h6>Phone:</h6> {{events.eventPhone}}</li>
+            <li class=\"list-group-item\"><h6>Address:</h6> {{events.eventAdd}}</li>
+            <li class=\"list-group-item\"><h6>Website:</h6> {{events.eventUrl}}</li>
+            <li class=\"list-group-item\"><h6>Type:</h6> {{events.eventType}}</li>
        </ul>
-{% endblock %}
-        {#<tr><td>{{ event.eventCapacity }}</td></tr>
-        <tr><td>{{ event.eventEmail }}</td></tr>
-        <tr><td>{{ event.eventPhone }}</td></tr>
-        <tr><td>{{ event.eventAdd }}</td></tr>
-        <tr><td>{{ event.eventUrl }}</td></tr>
-        <tr><td>{{ event.eventType }}</td></tr> #}", "pages/detailsevent.html.twig", "C:\\xampp\\htdocs\\FSWD60-Adam-Gyarmati-CodeReview13\\app\\Resources\\views\\pages\\detailsevent.html.twig");
+    </div>
+    <div class=\"col-sm-3\">
+    </div>
+  </div>
+</div>
+{% endblock %}", "pages/detailsevent.html.twig", "C:\\xampp\\htdocs\\FSWD60-Adam-Gyarmati-CodeReview13\\app\\Resources\\views\\pages\\detailsevent.html.twig");
     }
 }

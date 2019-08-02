@@ -59,19 +59,29 @@ class __TwigTemplate_b7f6c1bf61338a8e2f90397e2a2c10cd43c883dc0e9bbb10a45d579cd2f
         // line 3
         $this->loadTemplate("flash-messages.html.twig", "pages/editevent.html.twig", 3)->display($context);
         // line 4
-        echo "<h2 class=\"page-header\">Modify details</h2>
-";
-        // line 5
+        echo "
+  <div class=\"row\">
+    <div class=\"col-sm-2\">
+    </div>
+    <div class=\"col-sm-8 addform\">
+        <h2 class=\"page-header\">Modify details</h2>
+        ";
+        // line 10
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
         echo "
-";
-        // line 6
+        ";
+        // line 11
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(($context["form"] ?? $this->getContext($context, "form")), 'widget');
         echo "
-";
-        // line 7
+        ";
+        // line 12
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
+    </div>
+    <div class=\"col-sm-2\">
+    </div>
+  </div>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -93,7 +103,7 @@ class __TwigTemplate_b7f6c1bf61338a8e2f90397e2a2c10cd43c883dc0e9bbb10a45d579cd2f
 
     public function getDebugInfo()
     {
-        return array (  73 => 7,  69 => 6,  65 => 5,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  78 => 12,  74 => 11,  70 => 10,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -109,11 +119,20 @@ class __TwigTemplate_b7f6c1bf61338a8e2f90397e2a2c10cd43c883dc0e9bbb10a45d579cd2f
         return new Source("{% extends \"base.html.twig\" %}
 {% block body %}
 {% include('flash-messages.html.twig') %}
-<h2 class=\"page-header\">Modify details</h2>
-{{form_start(form)}}
-{{form_widget(form)}}
-{{form_end(form)}}
-{% endblock %}
-", "pages/editevent.html.twig", "C:\\xampp\\htdocs\\FSWD60-Adam-Gyarmati-CodeReview13\\app\\Resources\\views\\pages\\editevent.html.twig");
+
+  <div class=\"row\">
+    <div class=\"col-sm-2\">
+    </div>
+    <div class=\"col-sm-8 addform\">
+        <h2 class=\"page-header\">Modify details</h2>
+        {{form_start(form)}}
+        {{form_widget(form)}}
+        {{form_end(form)}}
+    </div>
+    <div class=\"col-sm-2\">
+    </div>
+  </div>
+</div>
+{% endblock %}", "pages/editevent.html.twig", "C:\\xampp\\htdocs\\FSWD60-Adam-Gyarmati-CodeReview13\\app\\Resources\\views\\pages\\editevent.html.twig");
     }
 }

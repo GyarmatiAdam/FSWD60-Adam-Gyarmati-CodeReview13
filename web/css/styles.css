@@ -1,12 +1,12 @@
 body{
     background: #36c;
-background:
-linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
-linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
-linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
-linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
-#36c;
-background-size: 15px 30px;
+    background:
+    linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+    linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+    linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+    linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+    #36c;
+    background-size: 15px 30px;
 }
 .navbar{
     background-color: #00126b;
@@ -25,7 +25,7 @@ background-size: 15px 30px;
     padding: 5px;
 }
 #logout a{
-        color: #6b0012;
+    color: #6b0012;
 }
 .container {
     margin-top: 40px;
@@ -33,4 +33,15 @@ background-size: 15px 30px;
 .form-signin {
     margin: 0 auto;
     max-width: 400px;
+}
+.addform{
+    background-color: #36c;
+}
+.modifytable{
+    background-color: #36c;
+}
+#appbundle_member_register{
+    background-color: rgb(0, 21, 61);
+    color: aquamarine;
+    font-weight: 400;
 }
