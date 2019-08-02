@@ -59,25 +59,25 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
         // line 3
         $this->loadTemplate("flash-messages.html.twig", "pages/index.html.twig", 3)->display($context);
         // line 4
-        echo "<div class=\"table-responsive-sm\">
-    <table class=\"table table-strip\">
+        echo "    <table>
     ";
-        // line 6
+        // line 5
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["events"] ?? $this->getContext($context, "events")));
         foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
-            // line 7
-            echo "    <tbody>
+            // line 6
+            echo "    <tbody style=\"margin:2rem; display:inline-block;\" class=\"text-center img-thumbnail\">
         <tr><td>";
-            // line 8
+            // line 7
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventName", []), "html", null, true);
             echo "</td></tr>
-        <tr><td><img src=\"";
-            // line 9
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventImg", []), "html", null, true);
-            echo "\" class=\"rounded mx-auto d-block\" alt=\"image\"></td></tr>
-        <tr><td>";
+        <tr><td><img class=\"img-fluid\" style=\"max-width: 100%; margin:auto;\" src=\"";
+            // line 8
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/custome.jpg"), "html", null, true);
+            echo "\" title=\"custome\" alt=\"custome\"></td></tr>
+        ";
             // line 10
+            echo "        <tr><td>";
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDesc", []), "html", null, true);
             echo "</td><tr>
         <tr><td>";
@@ -87,7 +87,7 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
         <tr><td><a href=\"details/";
             // line 12
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", []), "html", null, true);
-            echo "\" class=\"btn btn-success\">Details</a><tr><td>
+            echo "\" class=\"btn btn-light btn-block\">Details</a><tr><td>
     ";
         }
         $_parent = $context['_parent'];
@@ -96,7 +96,6 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
         // line 14
         echo "    </tbody>
     </table>
-</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -118,7 +117,7 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
 
     public function getDebugInfo()
     {
-        return array (  97 => 14,  89 => 12,  85 => 11,  81 => 10,  77 => 9,  73 => 8,  70 => 7,  66 => 6,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  97 => 14,  89 => 12,  85 => 11,  80 => 10,  76 => 8,  72 => 7,  69 => 6,  65 => 5,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -134,19 +133,18 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
         return new Source("{% extends \"base.html.twig\" %}
 {% block body %}
 {% include('flash-messages.html.twig') %}
-<div class=\"table-responsive-sm\">
-    <table class=\"table table-strip\">
+    <table>
     {% for event in events %}
-    <tbody>
+    <tbody style=\"margin:2rem; display:inline-block;\" class=\"text-center img-thumbnail\">
         <tr><td>{{ event.eventName }}</td></tr>
-        <tr><td><img src=\"{{ event.eventImg }}\" class=\"rounded mx-auto d-block\" alt=\"image\"></td></tr>
+        <tr><td><img class=\"img-fluid\" style=\"max-width: 100%; margin:auto;\" src=\"{{asset('images/custome.jpg')}}\" title=\"custome\" alt=\"custome\"></td></tr>
+        {# <tr><td><img src=\"{{ event.eventImg }}\" class=\"rounded mx-auto d-block\" alt=\"image\"></td></tr> #}
         <tr><td>{{ event.eventDesc }}</td><tr>
         <tr><td>{{ event.eventDate}}</td></tr>
-        <tr><td><a href=\"details/{{event.id}}\" class=\"btn btn-success\">Details</a><tr><td>
+        <tr><td><a href=\"details/{{event.id}}\" class=\"btn btn-light btn-block\">Details</a><tr><td>
     {% endfor %}
     </tbody>
     </table>
-</div>
 {% endblock %}", "pages/index.html.twig", "C:\\xampp\\htdocs\\FSWD60-Adam-Gyarmati-CodeReview13\\app\\Resources\\views\\pages\\index.html.twig");
     }
 }

@@ -1,3 +1,32 @@
+body{
+    background: #36c;
+background:
+linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+#36c;
+background-size: 15px 30px;
+}
+.navbar{
+    background-color: #00126b;
+    font-weight: 500;
+}
+.nav-link{
+    background-color: #006b5d;
+    margin-left: 10px;
+    border-radius: 5px;
+    color: #00126b;
+}
+#logout{
+    background-color: #054e44;
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+#logout a{
+        color: #6b0012;
+}
 .container {
     margin-top: 40px;
 }

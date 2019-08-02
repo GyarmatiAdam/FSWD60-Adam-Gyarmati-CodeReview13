@@ -102,7 +102,7 @@ class __TwigTemplate_2d73e8fa9c9dc32e59dc01c052bafb9661e3e7288b10697f493210923e7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, ($context["title"] ?? $this->getContext($context, "title"))), "html", null, true);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -198,7 +198,7 @@ class __TwigTemplate_2d73e8fa9c9dc32e59dc01c052bafb9661e3e7288b10697f493210923e7
 <html>
     <head>
         <meta charset=\"UTF-8\" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{{title|capitalize}}{% endblock %}</title>
 
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
         <link rel=\"stylesheet\" href=\"{{ asset('css/styles.css') }}\" />

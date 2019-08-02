@@ -24,7 +24,7 @@ class PageController extends Controller
     public function indexAction()
     {
         $events = $this->getDoctrine()->getRepository('AppBundle:Events')->findAll();
-        return $this->render('pages/index.html.twig', array('events'=>$events));
+        return $this->render('pages/index.html.twig', array('events'=>$events, 'title' =>'home'));
     }
 
     /**
@@ -33,7 +33,7 @@ class PageController extends Controller
     public function modifyAction()
     {
         $events = $this->getDoctrine()->getRepository('AppBundle:Events')->findAll();
-        return $this->render('pages/modify.html.twig', array('events'=>$events));
+        return $this->render('pages/modify.html.twig', array('events'=>$events, 'title' =>'modify'));
     }
 
     /**
@@ -87,7 +87,7 @@ class PageController extends Controller
             return $this->redirectToRoute('modifypage');
         }
         
-        return $this->render('pages/createevent.html.twig', array('form' => $form->createView()));
+        return $this->render('pages/createevent.html.twig', array('title' =>'add', 'form' => $form->createView()));
 
     }
 
@@ -98,7 +98,7 @@ class PageController extends Controller
     public function detailAction($id)
     {
         $events = $this->getDoctrine()->getRepository('AppBundle:Events')->find($id);
-        return $this->render('pages/detailsevent.html.twig', array('events'=>$events));
+        return $this->render('pages/detailsevent.html.twig', array('title' =>'details', 'events'=>$events));
     }
 
     /**
@@ -164,7 +164,7 @@ class PageController extends Controller
             return $this->redirectToRoute('modifypage');
         }
         
-        return $this->render('pages/editevent.html.twig', array('form' => $form->createView()));
+        return $this->render('pages/editevent.html.twig', array('title' =>'update', 'form' => $form->createView()));
 
 
         // return $this->render('pages/editevent.html.twig');

@@ -33,18 +33,20 @@ class __TwigTemplate_d0bcac0961875c2f7d3988d32fd144b2b13f3461ff341a32096841eb526
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "pages/navbar.html.twig"));
 
         // line 1
-        echo "<nav class=\"fixed-top navbar navbar-expand-lg navbar-dark bg-dark\">
+        echo "<nav class=\"fixed-top navbar navbar-expand-lg\">
+    <div id=\"logout\">
       ";
-        // line 2
+        // line 3
         if ($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", [])) {
-            // line 3
+            // line 4
             echo "        <a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\LogoutUrlExtension')->getLogoutPath("main"), "html", null, true);
             echo "\">Logout</a>
       ";
         }
-        // line 5
-        echo "  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+        // line 6
+        echo "    </div>
+  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
     <span class=\"navbar-toggler-icon\"></span>
   </button>
 
@@ -60,7 +62,7 @@ class __TwigTemplate_d0bcac0961875c2f7d3988d32fd144b2b13f3461ff341a32096841eb526
         <a class=\"nav-link\" href=\"/modify\">Modify</a>
       </li>
       ";
-        // line 34
+        // line 36
         echo "    </ul>
     <form class=\"form-inline my-2 my-lg-0\">
       <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
@@ -88,7 +90,7 @@ class __TwigTemplate_d0bcac0961875c2f7d3988d32fd144b2b13f3461ff341a32096841eb526
 
     public function getDebugInfo()
     {
-        return array (  64 => 34,  47 => 5,  41 => 3,  39 => 2,  36 => 1,);
+        return array (  66 => 36,  48 => 6,  42 => 4,  40 => 3,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -101,10 +103,12 @@ class __TwigTemplate_d0bcac0961875c2f7d3988d32fd144b2b13f3461ff341a32096841eb526
 
     public function getSourceContext()
     {
-        return new Source("<nav class=\"fixed-top navbar navbar-expand-lg navbar-dark bg-dark\">
+        return new Source("<nav class=\"fixed-top navbar navbar-expand-lg\">
+    <div id=\"logout\">
       {% if app.user %}
         <a href=\"{{ logout_path('main') }}\">Logout</a>
       {% endif %}
+    </div>
   <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
     <span class=\"navbar-toggler-icon\"></span>
   </button>

@@ -1,17 +1,16 @@
 {% extends "base.html.twig" %}
 {% block body %}
 {% include('flash-messages.html.twig') %}
-<div class="table-responsive-sm">
-    <table class="table table-strip">
+    <table>
     {% for event in events %}
-    <tbody>
+    <tbody style="margin:2rem; display:inline-block;" class="text-center img-thumbnail">
         <tr><td>{{ event.eventName }}</td></tr>
-        <tr><td><img src="{{ event.eventImg }}" class="rounded mx-auto d-block" alt="image"></td></tr>
+        <tr><td><img class="img-fluid" style="max-width: 100%; margin:auto;" src="{{asset('images/custome.jpg')}}" title="custome" alt="custome"></td></tr>
+        {# <tr><td><img src="{{ event.eventImg }}" class="rounded mx-auto d-block" alt="image"></td></tr> #}
         <tr><td>{{ event.eventDesc }}</td><tr>
         <tr><td>{{ event.eventDate}}</td></tr>
-        <tr><td><a href="details/{{event.id}}" class="btn btn-success">Details</a><tr><td>
+        <tr><td><a href="details/{{event.id}}" class="btn btn-light btn-block">Details</a><tr><td>
     {% endfor %}
     </tbody>
     </table>
-</div>
 {% endblock %}
