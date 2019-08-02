@@ -84,15 +84,12 @@ class PageController extends Controller
             $em->flush();
 
             $this->addFlash('notice','New event now is added');
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('modifypage');
         }
         
         return $this->render('pages/createevent.html.twig', array('form' => $form->createView()));
 
     }
-
-
-
 
 
     /**
@@ -109,7 +106,68 @@ class PageController extends Controller
      */
     public function editAction($id, Request $request)
     {
-        return $this->render('pages/editevent.html.twig');
+        $events = $this->getDoctrine()->getRepository('AppBundle:Events')->find($id);
+
+        $events->setEventName($events->getEventName());
+        $events->setEventDate($events->getEventDate());
+        $events->setEventDesc($events->getEventDesc());
+        $events->setEventImg($events->getEventImg());
+        $events->setEventCapacity($events->getEventCapacity());
+        $events->setEventEmail($events->getEventEmail());
+        $events->setEventPhone($events->getEventPhone());
+        $events->setEventAdd($events->getEventAdd());
+        $events->setEventUrl($events->getEventUrl());
+        $events->setEventType($events->getEventType());
+
+        $form = $this->createFormBuilder($events)
+            ->add('eventName', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+            ->add('eventDate', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+            ->add('eventDesc', TextareaType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+            ->add('eventCapacity', NumberType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+            ->add('eventEmail', EmailType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+            ->add('eventPhone', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+            ->add('eventAdd', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+            ->add('eventUrl', UrlType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+            ->add('eventType', ChoiceType::class, array('choices'=>array('Music'=>'Music', 'Sport'=>'Sport', 'Movie'=>'Movie', 'Theater'=>'Theater'),'attr' => array('class'=> 'form-control', 'style'=>'margin-botton:15px')))
+            ->add('save', SubmitType::class, array('label'=> 'Modify', 'attr' => array('class'=> 'btn-primary', 'style'=>'margin-bottom:15px')))
+            ->getForm();
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $eventName = $form['eventName']->getData();
+            $eventDate = $form['eventDate']->getData();
+            $eventDesc = $form['eventDesc']->getData();
+            $eventCapacity = $form['eventCapacity']->getData();
+            $eventEmail = $form['eventEmail']->getData();
+            $eventPhone = $form['eventPhone']->getData();
+            $eventAdd = $form['eventAdd']->getData();
+            $eventUrl = $form['eventUrl']->getData();
+            $eventType = $form['eventType']->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $events = $em->getRepository('AppBundle:Events')->find($id);
+ 
+            $events->setEventName($eventName);
+            $events->setEventDate($eventDate);
+            $events->setEventDesc($eventDesc);
+            $events->setEventCapacity($eventCapacity);
+            $events->setEventEmail($eventEmail);
+            $events->setEventPhone($eventPhone);
+            $events->setEventAdd($eventAdd);
+            $events->setEventUrl($eventUrl);
+            $events->setEventType($eventType);
+
+            $em->flush();
+
+            $this->addFlash('notice','The event has been updated');
+            return $this->redirectToRoute('modifypage');
+        }
+        
+        return $this->render('pages/editevent.html.twig', array('form' => $form->createView()));
+
+
+        // return $this->render('pages/editevent.html.twig');
     }
 
 }
