@@ -1,5 +1,15 @@
 {% extends "base.html.twig" %}
 {% block body %}
 {% include('flash-messages.html.twig') %}
-details
+    <a class="btn btn-default" href="/">Back</a>
+    <hr>
+    <h2 class="page-header">{{events.eventName}}</h2>
+       <ul class="list-group">
+            <li class="list-group-item">Capacity: {{events.eventCapacity}}</li>
+            <li class="list-group-item">Email: {{events.eventEmail}}</li>
+            <li class="list-group-item">Phone: {{eventPhone.}}</li>
+            <li class="list-group-item">Address: {{eventAdd.}}</li>
+            <li class="list-group-item">Website: {{eventUrl.}}</li>
+            <li class="list-group-item">Type: {{eventType.}}</li>
+       </ul>
 {% endblock %}

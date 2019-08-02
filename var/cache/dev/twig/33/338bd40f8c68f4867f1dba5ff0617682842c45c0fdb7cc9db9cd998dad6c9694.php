@@ -59,7 +59,19 @@ class __TwigTemplate_35656e4dd08a77d61af23ca657661a6bc758d12a2e251d41286aa130423
         // line 3
         $this->loadTemplate("flash-messages.html.twig", "pages/createevent.html.twig", 3)->display($context);
         // line 4
-        echo "create
+        echo "<h2 class=\"page-header\">Add New Event</h2>
+";
+        // line 5
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
+        echo "
+";
+        // line 6
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(($context["form"] ?? $this->getContext($context, "form")), 'widget');
+        echo "
+";
+        // line 7
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -81,7 +93,7 @@ class __TwigTemplate_35656e4dd08a77d61af23ca657661a6bc758d12a2e251d41286aa130423
 
     public function getDebugInfo()
     {
-        return array (  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  73 => 7,  69 => 6,  65 => 5,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -97,7 +109,10 @@ class __TwigTemplate_35656e4dd08a77d61af23ca657661a6bc758d12a2e251d41286aa130423
         return new Source("{% extends \"base.html.twig\" %}
 {% block body %}
 {% include('flash-messages.html.twig') %}
-create
+<h2 class=\"page-header\">Add New Event</h2>
+{{form_start(form)}}
+{{form_widget(form)}}
+{{form_end(form)}}
 {% endblock %}", "pages/createevent.html.twig", "C:\\xampp\\htdocs\\FSWD60-Adam-Gyarmati-CodeReview13\\app\\Resources\\views\\pages\\createevent.html.twig");
     }
 }

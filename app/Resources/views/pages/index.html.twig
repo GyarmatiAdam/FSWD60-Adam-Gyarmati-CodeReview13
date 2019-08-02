@@ -5,18 +5,12 @@
     <table class="table table-strip">
     {% for event in events %}
     <tbody>
-        <tr><th scope="row">{{ event.eventName }}</th></tr>
-        <img src="{{ event.eventImg }}" class="rounded mx-auto d-block" alt="image">
-        {# <tr><td>{{ event.eventImg }}</td></tr> #}
-        <tr><th scope="row">{{ event.eventDesc }}</th><tr>
-        <tr><td>{{ event.eventCapacity }}</td></tr>
-        <tr><td>{{ event.eventEmail }}</td></tr>
-        <tr><td>{{ event.eventPhone }}</td></tr>
-        <tr><td>{{ event.eventAdd }}</td></tr>
-        <tr><td>{{ event.eventUrl }}</td></tr>
-        <tr><td>{{ event.eventType }}</td></tr>
-        
-        {% endfor %}
+        <tr><td>{{ event.eventName }}</td></tr>
+        <tr><td><img src="{{ event.eventImg }}" class="rounded mx-auto d-block" alt="image"></td></tr>
+        <tr><td>{{ event.eventDesc }}</td><tr>
+        <tr><td>{{ event.eventDate}}</td></tr>
+        <tr><td><a href="details/{{event.id}}" class="btn btn-success">Details</a><tr><td>
+    {% endfor %}
     </tbody>
     </table>
 </div>

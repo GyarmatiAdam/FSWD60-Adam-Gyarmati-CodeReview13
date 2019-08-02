@@ -24,6 +24,13 @@ class Events
     /**
      * @var string
      *
+     * @ORM\Column(name="eventDate", type="string", length=155)
+     */
+    private $eventDate;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="eventName", type="string", length=155)
      */
     private $eventName;
@@ -109,6 +116,7 @@ class Events
         return $this;
     }
 
+        
     /**
      * Get eventName
      *
@@ -118,6 +126,33 @@ class Events
     {
         return $this->eventName;
     }
+
+
+    /**
+     * Get eventDate
+     *
+     * @return string
+     */
+    public function getEventDate()
+    {
+        return $this->eventDate;
+    }
+
+
+    /**
+     * Set eventDate
+     *
+     * @param string $eventDate
+     *
+     * @return Events
+     */
+    public function setEventDate($eventDate)
+    {
+        $this->eventDate = $eventDate;
+
+        return $this;
+    }
+
 
     /**
      * Set eventDesc

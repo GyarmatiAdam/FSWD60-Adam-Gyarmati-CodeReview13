@@ -133,13 +133,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // detailpage
-        if ('/details' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\PageController::detailAction',  '_route' => 'detailpage',);
+        if (0 === strpos($pathinfo, '/details') && preg_match('#^/details/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'detailpage']), array (  '_controller' => 'AppBundle\\Controller\\PageController::detailAction',));
         }
 
         // editpage
-        if ('/edit' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\PageController::editAction',  '_route' => 'editpage',);
+        if (0 === strpos($pathinfo, '/edit') && preg_match('#^/edit/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'editpage']), array (  '_controller' => 'AppBundle\\Controller\\PageController::editAction',));
         }
 
         // registration

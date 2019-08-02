@@ -68,50 +68,32 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
         foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
             // line 7
             echo "    <tbody>
-        <tr><th scope=\"row\">";
+        <tr><td>";
             // line 8
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventName", []), "html", null, true);
-            echo "</th></tr>
-        <img src=\"";
+            echo "</td></tr>
+        <tr><td><img src=\"";
             // line 9
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventImg", []), "html", null, true);
-            echo "\" class=\"rounded mx-auto d-block\" alt=\"image\">
-        ";
-            // line 11
-            echo "        <tr><th scope=\"row\">";
+            echo "\" class=\"rounded mx-auto d-block\" alt=\"image\"></td></tr>
+        <tr><td>";
+            // line 10
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDesc", []), "html", null, true);
-            echo "</th><tr>
+            echo "</td><tr>
         <tr><td>";
+            // line 11
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDate", []), "html", null, true);
+            echo "</td></tr>
+        <tr><td><a href=\"details/";
             // line 12
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventCapacity", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 13
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventEmail", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 14
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventPhone", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 15
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventAdd", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 16
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventUrl", []), "html", null, true);
-            echo "</td></tr>
-        <tr><td>";
-            // line 17
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventType", []), "html", null, true);
-            echo "</td></tr>
-        
-        ";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", []), "html", null, true);
+            echo "\" class=\"btn btn-success\">Details</a><tr><td>
+    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['event'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
+        // line 14
         echo "    </tbody>
     </table>
 </div>
@@ -136,7 +118,7 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
 
     public function getDebugInfo()
     {
-        return array (  115 => 20,  106 => 17,  102 => 16,  98 => 15,  94 => 14,  90 => 13,  86 => 12,  81 => 11,  77 => 9,  73 => 8,  70 => 7,  66 => 6,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  97 => 14,  89 => 12,  85 => 11,  81 => 10,  77 => 9,  73 => 8,  70 => 7,  66 => 6,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -156,18 +138,12 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
     <table class=\"table table-strip\">
     {% for event in events %}
     <tbody>
-        <tr><th scope=\"row\">{{ event.eventName }}</th></tr>
-        <img src=\"{{ event.eventImg }}\" class=\"rounded mx-auto d-block\" alt=\"image\">
-        {# <tr><td>{{ event.eventImg }}</td></tr> #}
-        <tr><th scope=\"row\">{{ event.eventDesc }}</th><tr>
-        <tr><td>{{ event.eventCapacity }}</td></tr>
-        <tr><td>{{ event.eventEmail }}</td></tr>
-        <tr><td>{{ event.eventPhone }}</td></tr>
-        <tr><td>{{ event.eventAdd }}</td></tr>
-        <tr><td>{{ event.eventUrl }}</td></tr>
-        <tr><td>{{ event.eventType }}</td></tr>
-        
-        {% endfor %}
+        <tr><td>{{ event.eventName }}</td></tr>
+        <tr><td><img src=\"{{ event.eventImg }}\" class=\"rounded mx-auto d-block\" alt=\"image\"></td></tr>
+        <tr><td>{{ event.eventDesc }}</td><tr>
+        <tr><td>{{ event.eventDate}}</td></tr>
+        <tr><td><a href=\"details/{{event.id}}\" class=\"btn btn-success\">Details</a><tr><td>
+    {% endfor %}
     </tbody>
     </table>
 </div>

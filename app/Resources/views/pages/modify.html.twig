@@ -1,4 +1,17 @@
 {% extends "base.html.twig" %}
 {% block body %}
-
+<div class="table-responsive-sm">
+    <table class="table table-strip">
+    {% for event in events %}
+    <tbody>
+        <tr><td>{{ event.eventName }}</td></tr>
+        <tr><td><img src="{{ event.eventImg }}" class="rounded mx-auto d-block" alt="image"></td></tr>
+        <tr><td>{{ event.eventDesc }}</td><tr>
+        <tr><td>{{ event.eventDate}}</td></tr>
+        <tr><td><a href="edit/{{event.id}}" class="btn btn-default">Edit</a>
+        <a href="delete/{{event.id}}" class="btn btn-danger">Delete</a></td></tr>
+    {% endfor %}
+    </tbody>
+    </table>
+</div>
 {% endblock %}
