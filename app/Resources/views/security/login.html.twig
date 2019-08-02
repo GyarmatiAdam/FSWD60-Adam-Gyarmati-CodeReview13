@@ -1,14 +1,10 @@
 {% extends 'base.html.twig' %}
-
+{% include('flash-messages.html.twig') %}
 {% block body %}
   <div class="row">
     <div class="col-sm-3">
     </div>
-    <div class="col-sm-6">
-
-
-{% include('flash-messages.html.twig') %}
-    <div class="addform">
+    <div class="col-sm-6 addform">
         <form class="form-signin" action="{{ path('login') }}" method="POST">
             <h2 class="form-signin-heading">Please sign in</h2><br><br>
             <label for="_username" class="sr-only">Username</label>
@@ -28,8 +24,7 @@
                 required><br>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button><br><br>
             <a href="/register" class="btn btn-secondary btn-block" role="button" aria-disabled="true">Got to register</a><br>
-        </form>
-    </div>    
+        </form>   
     </div>
     <div class="col-sm-3">
     </div>

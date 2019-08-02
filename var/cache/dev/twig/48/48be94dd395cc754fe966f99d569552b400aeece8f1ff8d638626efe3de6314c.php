@@ -59,41 +59,71 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
         // line 3
         $this->loadTemplate("flash-messages.html.twig", "pages/index.html.twig", 3)->display($context);
         // line 4
-        echo "    <table>
+        echo "    <div id=\"carouselExampleControls\" class=\"carousel slide\" data-ride=\"carousel\">
+        <div class=\"carousel-inner\">
+            <div class=\"carousel-item active\">
+            <img class=\"d-block w-100\" src=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/theater.jpg"), "html", null, true);
+        echo "\" alt=\"First slide\">
+            </div>
+            <div class=\"carousel-item\">
+            <img class=\"d-block w-100\" src=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/cinema.jpg"), "html", null, true);
+        echo "\" alt=\"Second slide\">
+            </div>
+            <div class=\"carousel-item\">
+            <img class=\"d-block w-100\" src=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/concert.jpg"), "html", null, true);
+        echo "\" alt=\"Third slide\">
+            </div>
+        </div>
+        <a class=\"carousel-control-prev\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"prev\">
+            <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
+            <span class=\"sr-only\">Previous</span>
+        </a>
+        <a class=\"carousel-control-next\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"next\">
+            <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
+            <span class=\"sr-only\">Next</span>
+        </a>
+    </div>
+    <table>
     ";
-        // line 5
+        // line 26
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["events"] ?? $this->getContext($context, "events")));
         foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
-            // line 6
+            // line 27
             echo "    <tbody style=\"margin:2rem; display:inline-block;\" class=\"text-center img-thumbnail\">
         <tr><td>";
-            // line 7
+            // line 28
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventName", []), "html", null, true);
             echo "</td></tr>
         <tr><td><img class=\"img-fluid\" style=\"max-width: 100%; margin:auto;\" src=\"";
-            // line 8
+            // line 29
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/custome.jpg"), "html", null, true);
             echo "\" title=\"custome\" alt=\"custome\"></td></tr>
         ";
-            // line 10
+            // line 31
             echo "        <tr><td>";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDesc", []), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventType", []), "html", null, true);
             echo "</td><tr>
         <tr><td>";
-            // line 11
+            // line 32
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDate", []), "html", null, true);
             echo "</td></tr>
         <tr><td><a href=\"details/";
-            // line 12
+            // line 33
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", []), "html", null, true);
-            echo "\" class=\"btn btn-light btn-block\">Details</a><tr><td>
+            echo "\" class=\"btn btn-info btn-block\">Details</a><tr><td>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['event'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
+        // line 35
         echo "    </tbody>
     </table>
 ";
@@ -117,7 +147,7 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
 
     public function getDebugInfo()
     {
-        return array (  97 => 14,  89 => 12,  85 => 11,  80 => 10,  76 => 8,  72 => 7,  69 => 6,  65 => 5,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  127 => 35,  119 => 33,  115 => 32,  110 => 31,  106 => 29,  102 => 28,  99 => 27,  95 => 26,  79 => 13,  73 => 10,  67 => 7,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -133,15 +163,36 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
         return new Source("{% extends \"base.html.twig\" %}
 {% block body %}
 {% include('flash-messages.html.twig') %}
+    <div id=\"carouselExampleControls\" class=\"carousel slide\" data-ride=\"carousel\">
+        <div class=\"carousel-inner\">
+            <div class=\"carousel-item active\">
+            <img class=\"d-block w-100\" src=\"{{asset('images/theater.jpg')}}\" alt=\"First slide\">
+            </div>
+            <div class=\"carousel-item\">
+            <img class=\"d-block w-100\" src=\"{{asset('images/cinema.jpg')}}\" alt=\"Second slide\">
+            </div>
+            <div class=\"carousel-item\">
+            <img class=\"d-block w-100\" src=\"{{asset('images/concert.jpg')}}\" alt=\"Third slide\">
+            </div>
+        </div>
+        <a class=\"carousel-control-prev\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"prev\">
+            <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
+            <span class=\"sr-only\">Previous</span>
+        </a>
+        <a class=\"carousel-control-next\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"next\">
+            <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
+            <span class=\"sr-only\">Next</span>
+        </a>
+    </div>
     <table>
     {% for event in events %}
     <tbody style=\"margin:2rem; display:inline-block;\" class=\"text-center img-thumbnail\">
         <tr><td>{{ event.eventName }}</td></tr>
         <tr><td><img class=\"img-fluid\" style=\"max-width: 100%; margin:auto;\" src=\"{{asset('images/custome.jpg')}}\" title=\"custome\" alt=\"custome\"></td></tr>
         {# <tr><td><img src=\"{{ event.eventImg }}\" class=\"rounded mx-auto d-block\" alt=\"image\"></td></tr> #}
-        <tr><td>{{ event.eventDesc }}</td><tr>
+        <tr><td>{{ event.eventType }}</td><tr>
         <tr><td>{{ event.eventDate}}</td></tr>
-        <tr><td><a href=\"details/{{event.id}}\" class=\"btn btn-light btn-block\">Details</a><tr><td>
+        <tr><td><a href=\"details/{{event.id}}\" class=\"btn btn-info btn-block\">Details</a><tr><td>
     {% endfor %}
     </tbody>
     </table>
