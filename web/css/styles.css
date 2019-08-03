@@ -51,8 +51,17 @@ body{
     background-color: chocolate;
 }
 .indextable{
-    max-width: 250px;
-    max-height: 3500px;
+    width: 300px;
+    height: 330px;
+    position: relative;
+    border: 5px blue;
+    margin: auto;
+}
+.detailbutton{
+    position: absolute;
+    bottom: 5px;
+    max-width: 285px;
+    margin: auto;
 }
 .navbar-toggler{
     background-color: cyan;

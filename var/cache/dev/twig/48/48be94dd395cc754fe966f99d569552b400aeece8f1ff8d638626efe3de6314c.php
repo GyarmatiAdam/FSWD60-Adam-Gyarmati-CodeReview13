@@ -127,7 +127,7 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
         <tr><td><a href=\"details/";
             // line 36
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", []), "html", null, true);
-            echo "\" class=\"btn btn-info btn-block\">Details</a><tr><td>
+            echo "\" class=\"detailbutton btn btn-info btn-block\">Details</a><tr><td>
     ";
         }
         $_parent = $context['_parent'];
@@ -205,7 +205,7 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
         {% endif %}
         <tr><td>{{ event.eventType }}</td><tr>
         <tr><td>{{ event.eventDate}}</td></tr>
-        <tr><td><a href=\"details/{{event.id}}\" class=\"btn btn-info btn-block\">Details</a><tr><td>
+        <tr><td><a href=\"details/{{event.id}}\" class=\"detailbutton btn btn-info btn-block\">Details</a><tr><td>
     {% endfor %}
     </tbody>
     </table>
