@@ -96,26 +96,36 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
         $context['_seq'] = twig_ensure_traversable(($context["events"] ?? $this->getContext($context, "events")));
         foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
             // line 27
-            echo "    <tbody style=\"margin:2rem; display:inline-block;\" class=\"text-center img-thumbnail\">
+            echo "    <tbody style=\"margin:2rem; display:inline-block;\" class=\"text-center img-thumbnail indextable\">
         <tr><td>";
             // line 28
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventName", []), "html", null, true);
             echo "</td></tr>
-        <tr><td><img class=\"img-fluid\" style=\"max-width: 100%; margin:auto;\" src=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(("images/" . $this->getAttribute($context["event"], "eventImg", []))), "html", null, true);
-            echo "\" title=\"custome\" alt=\"custome\"></td></tr>
         ";
-            // line 31
+            // line 29
+            if (($this->getAttribute($context["event"], "eventImg", []) == true)) {
+                // line 30
+                echo "            <tr><td><img class=\"img-fluid\" src=\"";
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(("images/" . $this->getAttribute($context["event"], "eventImg", []))), "html", null, true);
+                echo "\" title=\"custome\" alt=\"custome\"></td></tr>
+        ";
+            } else {
+                // line 32
+                echo "            <tr><td><img class=\"img-fluid\" src=\"";
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/custome.jpg"), "html", null, true);
+                echo "\" title=\"custome\" alt=\"custome\"></td></tr>
+        ";
+            }
+            // line 34
             echo "        <tr><td>";
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventType", []), "html", null, true);
             echo "</td><tr>
         <tr><td>";
-            // line 32
+            // line 35
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDate", []), "html", null, true);
             echo "</td></tr>
         <tr><td><a href=\"details/";
-            // line 33
+            // line 36
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", []), "html", null, true);
             echo "\" class=\"btn btn-info btn-block\">Details</a><tr><td>
     ";
@@ -123,7 +133,7 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['event'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 38
         echo "    </tbody>
     </table>
 ";
@@ -147,7 +157,7 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
 
     public function getDebugInfo()
     {
-        return array (  127 => 35,  119 => 33,  115 => 32,  110 => 31,  106 => 29,  102 => 28,  99 => 27,  95 => 26,  79 => 13,  73 => 10,  67 => 7,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  137 => 38,  129 => 36,  125 => 35,  120 => 34,  114 => 32,  108 => 30,  106 => 29,  102 => 28,  99 => 27,  95 => 26,  79 => 13,  73 => 10,  67 => 7,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -186,10 +196,13 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
     </div>
     <table>
     {% for event in events %}
-    <tbody style=\"margin:2rem; display:inline-block;\" class=\"text-center img-thumbnail\">
+    <tbody style=\"margin:2rem; display:inline-block;\" class=\"text-center img-thumbnail indextable\">
         <tr><td>{{ event.eventName }}</td></tr>
-        <tr><td><img class=\"img-fluid\" style=\"max-width: 100%; margin:auto;\" src=\"{{asset('images/' ~ event.eventImg)}}\" title=\"custome\" alt=\"custome\"></td></tr>
-        {# <tr><td><img src=\"{{ event.eventImg }}\" class=\"rounded mx-auto d-block\" alt=\"image\"></td></tr> #}
+        {% if event.eventImg == true %}
+            <tr><td><img class=\"img-fluid\" src=\"{{asset('images/' ~ event.eventImg)}}\" title=\"custome\" alt=\"custome\"></td></tr>
+        {% else %}
+            <tr><td><img class=\"img-fluid\" src=\"{{asset('images/custome.jpg')}}\" title=\"custome\" alt=\"custome\"></td></tr>
+        {% endif %}
         <tr><td>{{ event.eventType }}</td><tr>
         <tr><td>{{ event.eventDate}}</td></tr>
         <tr><td><a href=\"details/{{event.id}}\" class=\"btn btn-info btn-block\">Details</a><tr><td>

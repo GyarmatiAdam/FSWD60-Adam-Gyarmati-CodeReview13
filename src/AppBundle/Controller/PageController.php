@@ -58,15 +58,15 @@ class PageController extends Controller
             ->add('eventAdd', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
             ->add('eventUrl', UrlType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
             ->add('eventType', ChoiceType::class, array('choices'=>array('Music'=>'Music', 'Sport'=>'Sport', 'Movie'=>'Movie', 'Theater'=>'Theater'),'attr' => array('class'=> 'form-control', 'style'=>'margin-botton:15px')))
-            // ->add('eventImg', FileType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
             ->add('eventImg', FileType::class, ['label' => 'Image (JPG, PNG)','mapped' => false,'required' => false,
                 'constraints' => [
                     new File([
                         'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'image/png',
+                        'mimeTypes' => [    //https://www.iana.org/assignments/media-types/media-types.xhtml#image
+                            'image/png', 
+                            'image/jpeg', 
                         ],
-                        'mimeTypesMessage' => 'Please upload an image',
+                        'mimeTypesMessage' => 'The Image size or format is WRONG!',
                     ])
                 ],
             ])
@@ -101,15 +101,12 @@ class PageController extends Controller
                     $newFilename
                 );
             } catch (FileException $e) {
-            // ... handle exception if something happens during file upload
+                $this->addFlash('notice','This file type is not allowed!');
             }
 
-            // updates the 'brochureFilename' property to store the PDF file name
-            // instead of its contents
+            // updates the property to store the file name instead of its contents
                 $events->setEventImg($newFilename);
-            }
-        // return $this->redirect($this->generateUrl('app_product_list'));
-    
+            }    
  
             $events->setEventName($eventName);
             $events->setEventDate($eventDate);

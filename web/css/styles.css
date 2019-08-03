@@ -50,3 +50,13 @@ body{
     opacity: 1;
     background-color: chocolate;
 }
+.indextable{
+    max-width: 250px;
+    max-height: 3500px;
+}
+.navbar-toggler{
+    background-color: cyan;
+}
+.navbar-toggler-icon{
+    color: #6b0012;
+}
