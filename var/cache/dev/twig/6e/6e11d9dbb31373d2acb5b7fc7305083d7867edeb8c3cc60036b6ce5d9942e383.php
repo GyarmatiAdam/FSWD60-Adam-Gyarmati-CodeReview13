@@ -72,7 +72,19 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
         $context['_seq'] = twig_ensure_traversable(($context["events"] ?? $this->getContext($context, "events")));
         foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
             // line 12
-            echo "        <thead>
+            echo "<img href=\"";
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(("images/" . $this->getAttribute($context["event"], "eventImg", []))), "html", null, true);
+            echo "\">
+";
+            // line 14
+            echo "        ";
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(("images/" . $this->getAttribute($context["event"], "getEventImg", [], "method"))), "html", null, true);
+            echo "
+<img class=\"d-block w-100\" src=\"";
+            // line 15
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(("images/" . $this->getAttribute($context["event"], "eventImg", []))), "html", null, true);
+            echo "\" alt=\"First slide\">
+        <thead>
             <tr>
             <th scope=\"col\">#</th>
             <th scope=\"col\">Name</th>
@@ -84,15 +96,15 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
             <tr>
             <th scope=\"row\"></th>
             <td>";
-            // line 23
+            // line 27
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventName", []), "html", null, true);
             echo "</td>
             <td>";
-            // line 24
+            // line 28
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDate", []), "html", null, true);
             echo "</td>
             <td>";
-            // line 25
+            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventCapacity", []), "html", null, true);
             echo "</td>
             </tr>
@@ -109,15 +121,15 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
             <tr>
             <th scope=\"row\"></th>
             <td>";
-            // line 39
+            // line 43
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventEmail", []), "html", null, true);
             echo "</td>
             <td>";
-            // line 40
+            // line 44
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventPhone", []), "html", null, true);
             echo "</td>
             <td>";
-            // line 41
+            // line 45
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventAdd", []), "html", null, true);
             echo "</td>
             </tr>
@@ -134,11 +146,11 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
             <tr>
             <th scope=\"row\"></th>
             <td>";
-            // line 55
+            // line 59
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventUrl", []), "html", null, true);
             echo "</td>
             <td>";
-            // line 56
+            // line 60
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventType", []), "html", null, true);
             echo "</td>
             </tr>
@@ -153,18 +165,18 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
             <tr>
             <th scope=\"row\"></th>
             <td colspan=\"3\">";
-            // line 68
+            // line 72
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "eventDesc", []), "html", null, true);
             echo "</td>
             ";
-            // line 70
+            // line 74
             echo "            </tr>
             <tr><td colspan=\"3\"><a href=\"edit/";
-            // line 71
+            // line 75
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", []), "html", null, true);
             echo "\" class=\"btn btn-success\">Edit</a>
             <a href=\"delete/";
-            // line 72
+            // line 76
             echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", []), "html", null, true);
             echo "\" class=\"btn btn-danger\">Delete</a></td></tr>
 ";
@@ -172,7 +184,7 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['event'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 73
+        // line 77
         echo "    
         </tbody>
         </table><br><br>
@@ -204,7 +216,7 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
 
     public function getDebugInfo()
     {
-        return array (  176 => 73,  168 => 72,  164 => 71,  161 => 70,  157 => 68,  142 => 56,  138 => 55,  121 => 41,  117 => 40,  113 => 39,  96 => 25,  92 => 24,  88 => 23,  75 => 12,  71 => 11,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  188 => 77,  180 => 76,  176 => 75,  173 => 74,  169 => 72,  154 => 60,  150 => 59,  133 => 45,  129 => 44,  125 => 43,  108 => 29,  104 => 28,  100 => 27,  85 => 15,  80 => 14,  75 => 12,  71 => 11,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -228,6 +240,10 @@ class __TwigTemplate_610f5c84dfbb1fd43cc57a382dd93387435e9e4cdbfb7eaeaa6f9d2533d
     <div class=\"col-sm-8\">
     <table class=\"table modifytable \" style=\"margin:2rem; width:100%;\">
 {% for event in events %}
+<img href=\"{{ asset('images/' ~ event.eventImg) }}\">
+{# <img src=\"{{ app.request.scheme ~ '://' ~ app.request.host ~ asset('/images/' ~ event.eventImg) }}\" /> #}
+        {{ asset('images/' ~ event.getEventImg()) }}
+<img class=\"d-block w-100\" src=\"{{asset('images/' ~ event.eventImg)}}\" alt=\"First slide\">
         <thead>
             <tr>
             <th scope=\"col\">#</th>

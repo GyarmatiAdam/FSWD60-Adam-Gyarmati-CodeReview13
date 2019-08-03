@@ -26,7 +26,7 @@
     {% for event in events %}
     <tbody style="margin:2rem; display:inline-block;" class="text-center img-thumbnail">
         <tr><td>{{ event.eventName }}</td></tr>
-        <tr><td><img class="img-fluid" style="max-width: 100%; margin:auto;" src="{{asset('images/custome.jpg')}}" title="custome" alt="custome"></td></tr>
+        <tr><td><img class="img-fluid" style="max-width: 100%; margin:auto;" src="{{asset('images/' ~ event.eventImg)}}" title="custome" alt="custome"></td></tr>
         {# <tr><td><img src="{{ event.eventImg }}" class="rounded mx-auto d-block" alt="image"></td></tr> #}
         <tr><td>{{ event.eventType }}</td><tr>
         <tr><td>{{ event.eventDate}}</td></tr>

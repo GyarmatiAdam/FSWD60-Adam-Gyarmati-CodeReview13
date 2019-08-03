@@ -103,7 +103,7 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
             echo "</td></tr>
         <tr><td><img class=\"img-fluid\" style=\"max-width: 100%; margin:auto;\" src=\"";
             // line 29
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/custome.jpg"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(("images/" . $this->getAttribute($context["event"], "eventImg", []))), "html", null, true);
             echo "\" title=\"custome\" alt=\"custome\"></td></tr>
         ";
             // line 31
@@ -188,7 +188,7 @@ class __TwigTemplate_729be057016938bca387d6cb671f7ff4db490bb7d83effb5e0124d600a8
     {% for event in events %}
     <tbody style=\"margin:2rem; display:inline-block;\" class=\"text-center img-thumbnail\">
         <tr><td>{{ event.eventName }}</td></tr>
-        <tr><td><img class=\"img-fluid\" style=\"max-width: 100%; margin:auto;\" src=\"{{asset('images/custome.jpg')}}\" title=\"custome\" alt=\"custome\"></td></tr>
+        <tr><td><img class=\"img-fluid\" style=\"max-width: 100%; margin:auto;\" src=\"{{asset('images/' ~ event.eventImg)}}\" title=\"custome\" alt=\"custome\"></td></tr>
         {# <tr><td><img src=\"{{ event.eventImg }}\" class=\"rounded mx-auto d-block\" alt=\"image\"></td></tr> #}
         <tr><td>{{ event.eventType }}</td><tr>
         <tr><td>{{ event.eventDate}}</td></tr>
