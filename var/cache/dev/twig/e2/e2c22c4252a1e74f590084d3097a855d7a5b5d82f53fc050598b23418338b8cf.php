@@ -59,22 +59,21 @@ class __TwigTemplate_b7f6c1bf61338a8e2f90397e2a2c10cd43c883dc0e9bbb10a45d579cd2f
         // line 3
         $this->loadTemplate("flash-messages.html.twig", "pages/editevent.html.twig", 3)->display($context);
         // line 4
-        echo "
-  <div class=\"row\">
+        echo "  <div class=\"row\">
     <div class=\"col-sm-2\">
     </div>
     <div class=\"col-sm-8 addform\">
         <h2 class=\"page-header\">Modify details</h2>
         ";
-        // line 10
+        // line 9
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
         echo "
         ";
-        // line 11
+        // line 10
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(($context["form"] ?? $this->getContext($context, "form")), 'widget');
         echo "
         ";
-        // line 12
+        // line 11
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
     </div>
@@ -103,7 +102,7 @@ class __TwigTemplate_b7f6c1bf61338a8e2f90397e2a2c10cd43c883dc0e9bbb10a45d579cd2f
 
     public function getDebugInfo()
     {
-        return array (  78 => 12,  74 => 11,  70 => 10,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  77 => 11,  73 => 10,  69 => 9,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -119,7 +118,6 @@ class __TwigTemplate_b7f6c1bf61338a8e2f90397e2a2c10cd43c883dc0e9bbb10a45d579cd2f
         return new Source("{% extends \"base.html.twig\" %}
 {% block body %}
 {% include('flash-messages.html.twig') %}
-
   <div class=\"row\">
     <div class=\"col-sm-2\">
     </div>

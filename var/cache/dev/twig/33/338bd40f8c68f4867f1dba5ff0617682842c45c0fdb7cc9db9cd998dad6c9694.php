@@ -74,6 +74,10 @@ class __TwigTemplate_35656e4dd08a77d61af23ca657661a6bc758d12a2e251d41286aa130423
         echo "
         ";
         // line 11
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "eventImg", []), 'row');
+        echo "
+        ";
+        // line 12
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo " 
     </div>
@@ -102,7 +106,7 @@ class __TwigTemplate_35656e4dd08a77d61af23ca657661a6bc758d12a2e251d41286aa130423
 
     public function getDebugInfo()
     {
-        return array (  77 => 11,  73 => 10,  69 => 9,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  81 => 12,  77 => 11,  73 => 10,  69 => 9,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -125,6 +129,7 @@ class __TwigTemplate_35656e4dd08a77d61af23ca657661a6bc758d12a2e251d41286aa130423
         <h2 class=\"page-header\">Add New Event</h2>
         {{form_start(form)}}
         {{form_widget(form)}}
+        {{ form_row(form.eventImg) }}
         {{form_end(form)}} 
     </div>
     <div class=\"col-sm-2\">

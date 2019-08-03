@@ -13,6 +13,11 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 
 
@@ -53,6 +58,18 @@ class PageController extends Controller
             ->add('eventAdd', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
             ->add('eventUrl', UrlType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
             ->add('eventType', ChoiceType::class, array('choices'=>array('Music'=>'Music', 'Sport'=>'Sport', 'Movie'=>'Movie', 'Theater'=>'Theater'),'attr' => array('class'=> 'form-control', 'style'=>'margin-botton:15px')))
+            // ->add('eventImg', FileType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+            ->add('eventImg', FileType::class, ['label' => 'Image (JPG, PNG)','mapped' => false,'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/png',
+                        ],
+                        'mimeTypesMessage' => 'Please upload an image',
+                    ])
+                ],
+            ])
             ->add('save', SubmitType::class, array('label'=> 'Add new', 'attr' => array('class'=> 'btn-primary', 'style'=>'margin-bottom:15px')))
             ->getForm();
         $form->handleRequest($request);
@@ -68,6 +85,31 @@ class PageController extends Controller
             $eventAdd = $form['eventAdd']->getData();
             $eventUrl = $form['eventUrl']->getData();
             $eventType = $form['eventType']->getData();
+            $eventImg = $form['eventImg']->getData();
+
+        if ($eventImg) {
+            $originalFilename = pathinfo($eventImg->getClientOriginalName(), PATHINFO_FILENAME);
+            // this is needed to safely include the file name as part of the URL
+            // $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+            //  $newFilename = $safeFilename.'-'.uniqid().'.'.$eventImg->guessExtension();
+            $newFilename = $originalFilename.'-'.uniqid().'.'.$eventImg->guessExtension();
+
+            // Move the file to the directory where brochures are stored
+            try {
+                $eventImg->move(
+                    $this->getParameter('images_directory'),
+                    $newFilename
+                );
+            } catch (FileException $e) {
+            // ... handle exception if something happens during file upload
+            }
+
+            // updates the 'brochureFilename' property to store the PDF file name
+            // instead of its contents
+                $events->setEventImg($newFilename);
+            }
+        // return $this->redirect($this->generateUrl('app_product_list'));
+    
  
             $events->setEventName($eventName);
             $events->setEventDate($eventDate);
