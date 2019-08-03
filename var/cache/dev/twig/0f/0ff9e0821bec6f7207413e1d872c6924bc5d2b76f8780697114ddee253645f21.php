@@ -62,8 +62,8 @@ class __TwigTemplate_e1b022f3bdc9f477500275838b47787ef76587add686f938b8fee396fe1
         echo "  <div class=\"row\">
     <div class=\"col-sm-3\">
     </div>
-    <div class=\"col-sm-6\">
-    <a class=\"sticky-top btn btn-light\" href=\"/\">Back</a>
+    <div class=\"addform col-sm-6\">
+    <br><a class=\"btn btn-light\" href=\"/\">Back</a>
     <hr>
     <h2 class=\"page-header\">";
         // line 10
@@ -94,7 +94,7 @@ class __TwigTemplate_e1b022f3bdc9f477500275838b47787ef76587add686f938b8fee396fe1
         // line 17
         echo twig_escape_filter($this->env, $this->getAttribute(($context["events"] ?? $this->getContext($context, "events")), "eventType", []), "html", null, true);
         echo "</li>
-       </ul>
+       </ul><br>
     </div>
     <div class=\"col-sm-3\">
     </div>
@@ -140,8 +140,8 @@ class __TwigTemplate_e1b022f3bdc9f477500275838b47787ef76587add686f938b8fee396fe1
   <div class=\"row\">
     <div class=\"col-sm-3\">
     </div>
-    <div class=\"col-sm-6\">
-    <a class=\"sticky-top btn btn-light\" href=\"/\">Back</a>
+    <div class=\"addform col-sm-6\">
+    <br><a class=\"btn btn-light\" href=\"/\">Back</a>
     <hr>
     <h2 class=\"page-header\">{{events.eventName}}</h2>
        <ul class=\"list-group\">
@@ -151,7 +151,7 @@ class __TwigTemplate_e1b022f3bdc9f477500275838b47787ef76587add686f938b8fee396fe1
             <li class=\"list-group-item\"><h6>Address:</h6> {{events.eventAdd}}</li>
             <li class=\"list-group-item\"><h6>Website:</h6> {{events.eventUrl}}</li>
             <li class=\"list-group-item\"><h6>Type:</h6> {{events.eventType}}</li>
-       </ul>
+       </ul><br>
     </div>
     <div class=\"col-sm-3\">
     </div>

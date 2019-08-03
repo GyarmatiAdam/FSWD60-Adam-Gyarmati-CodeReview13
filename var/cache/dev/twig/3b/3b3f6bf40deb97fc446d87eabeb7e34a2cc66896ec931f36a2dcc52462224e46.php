@@ -47,7 +47,7 @@ class __TwigTemplate_289c1df462c08ac98171d2c786037a612e33c2c4de8dd64aa1374b98257
 
     }
 
-    // line 3
+    // line 2
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -56,6 +56,8 @@ class __TwigTemplate_289c1df462c08ac98171d2c786037a612e33c2c4de8dd64aa1374b98257
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+        // line 3
+        $this->loadTemplate("flash-messages.html.twig", "registration/register.html.twig", 3)->display($context);
         // line 4
         echo "  <div class=\"row\">
     <div class=\"col-sm-3\">
@@ -93,7 +95,7 @@ class __TwigTemplate_289c1df462c08ac98171d2c786037a612e33c2c4de8dd64aa1374b98257
 
     public function getDebugInfo()
     {
-        return array (  67 => 9,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  69 => 9,  62 => 4,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -107,8 +109,8 @@ class __TwigTemplate_289c1df462c08ac98171d2c786037a612e33c2c4de8dd64aa1374b98257
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
-
 {% block body %}
+{% include('flash-messages.html.twig') %}
   <div class=\"row\">
     <div class=\"col-sm-3\">
     </div>

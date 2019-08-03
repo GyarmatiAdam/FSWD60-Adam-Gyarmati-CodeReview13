@@ -45,3 +45,8 @@ body{
     color: aquamarine;
     font-weight: 400;
 }
+#flash{
+    z-index: 100;
+    opacity: 1;
+    background-color: chocolate;
+}

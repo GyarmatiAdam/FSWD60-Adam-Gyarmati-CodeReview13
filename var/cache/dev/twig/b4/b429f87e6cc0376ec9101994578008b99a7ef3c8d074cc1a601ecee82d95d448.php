@@ -62,7 +62,7 @@ class __TwigTemplate_190a0bd72c0754322e746b99b2076d2ef5c74969ba39d0eae94365275c7
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
                 // line 4
-                echo "            <div class=\"alert alert-";
+                echo "            <div id=\"flash\" class=\"alert alert-";
                 echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                 echo " alert-dismissible\" role=\"alert\">
                 <button type=\"button\" class=\"close\" data-dismiss=\"alert\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>
@@ -113,7 +113,7 @@ class __TwigTemplate_190a0bd72c0754322e746b99b2076d2ef5c74969ba39d0eae94365275c7
         return new Source("{% block flash_messages %}
     {% for type, messages in app.session.flashbag.all() %}
         {% for message in messages %}
-            <div class=\"alert alert-{{ type }} alert-dismissible\" role=\"alert\">
+            <div id=\"flash\" class=\"alert alert-{{ type }} alert-dismissible\" role=\"alert\">
                 <button type=\"button\" class=\"close\" data-dismiss=\"alert\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>
                 {{ message | raw }}
             </div>
