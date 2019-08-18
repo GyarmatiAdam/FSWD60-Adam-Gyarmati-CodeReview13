@@ -82,11 +82,11 @@
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
     <parameter key="container.autowiring.strict_mode">true</parameter>
     <parameter key="container.dumper.inline_class_loader">true</parameter>
-    <parameter key="database_host">127.0.0.1</parameter>
-    <parameter key="database_port">null</parameter>
-    <parameter key="database_name">cr13_Adam_Gyarmati_bigevents</parameter>
-    <parameter key="database_user">root</parameter>
-    <parameter key="database_password">null</parameter>
+    <parameter key="database_host">ec2-54-227-245-146.compute-1.amazonaws.com</parameter>
+    <parameter key="database_port">5432</parameter>
+    <parameter key="database_name">dcckfsh3ruc93r</parameter>
+    <parameter key="database_user">cbsorshuvktoss</parameter>
+    <parameter key="database_password">0314734fefeb3ff0cb0b04208bda890109a1a2bda9dcaa46799d8195b644df8b</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -3423,11 +3423,11 @@
     <service id="doctrine.dbal.default_connection" class="Doctrine\DBAL\Connection" public="true">
       <argument type="collection">
         <argument key="driver">pdo_mysql</argument>
-        <argument key="host">127.0.0.1</argument>
-        <argument key="port">null</argument>
-        <argument key="dbname">cr13_Adam_Gyarmati_bigevents</argument>
-        <argument key="user">root</argument>
-        <argument key="password">null</argument>
+        <argument key="host">ec2-54-227-245-146.compute-1.amazonaws.com</argument>
+        <argument key="port">5432</argument>
+        <argument key="dbname">dcckfsh3ruc93r</argument>
+        <argument key="user">cbsorshuvktoss</argument>
+        <argument key="password">0314734fefeb3ff0cb0b04208bda890109a1a2bda9dcaa46799d8195b644df8b</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>
