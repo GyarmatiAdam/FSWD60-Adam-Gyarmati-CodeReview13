@@ -20,8 +20,6 @@
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
-      <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
-      <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -78,16 +76,6 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\xampp\htdocs\FSWD60-Adam-Gyarmati-CodeReview13\vendor\sensio\distribution-bundle</parameter>
         <parameter key="namespace">Sensio\Bundle\DistributionBundle</parameter>
-      </parameter>
-      <parameter key="SensioGeneratorBundle" type="collection">
-        <parameter key="parent">null</parameter>
-        <parameter key="path">C:\xampp\htdocs\FSWD60-Adam-Gyarmati-CodeReview13\vendor\sensio\generator-bundle</parameter>
-        <parameter key="namespace">Sensio\Bundle\GeneratorBundle</parameter>
-      </parameter>
-      <parameter key="WebServerBundle" type="collection">
-        <parameter key="parent">null</parameter>
-        <parameter key="path">C:\xampp\htdocs\FSWD60-Adam-Gyarmati-CodeReview13\vendor\symfony\symfony\src\Symfony\Bundle\WebServerBundle</parameter>
-        <parameter key="namespace">Symfony\Bundle\WebServerBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -452,11 +440,6 @@
       <parameter key="console.command.doctrine_bundle_doctrinebundle_command_proxy_validateschemacommand">doctrine.schema_validate_command</parameter>
       <parameter key="console.command.doctrine_bundle_doctrinebundle_command_importmappingdoctrinecommand">doctrine.mapping_import_command</parameter>
       <parameter key="console.command.sensiolabs_security_command_securitycheckercommand">sensio_distribution.security_checker.command</parameter>
-      <parameter key="console.command.symfony_bundle_webserverbundle_command_serverruncommand">web_server.command.server_run</parameter>
-      <parameter key="console.command.symfony_bundle_webserverbundle_command_serverstartcommand">web_server.command.server_start</parameter>
-      <parameter key="console.command.symfony_bundle_webserverbundle_command_serverstopcommand">web_server.command.server_stop</parameter>
-      <parameter key="console.command.symfony_bundle_webserverbundle_command_serverstatuscommand">web_server.command.server_status</parameter>
-      <parameter key="console.command.symfony_bundle_webserverbundle_command_serverlogcommand">web_server.command.server_log</parameter>
     </parameter>
     <parameter key="console.lazy_command.ids" type="collection">
       <parameter key="console.command.about">true</parameter>
@@ -499,11 +482,6 @@
       <parameter key="doctrine.schema_validate_command">true</parameter>
       <parameter key="doctrine.mapping_import_command">true</parameter>
       <parameter key="sensio_distribution.security_checker.command">true</parameter>
-      <parameter key="web_server.command.server_run">true</parameter>
-      <parameter key="web_server.command.server_start">true</parameter>
-      <parameter key="web_server.command.server_stop">true</parameter>
-      <parameter key="web_server.command.server_status">true</parameter>
-      <parameter key="web_server.command.server_log">true</parameter>
     </parameter>
   </parameters>
   <services>
@@ -3867,40 +3845,6 @@
         <argument>security:check</argument>
       </call>
     </service>
-    <service id="web_server.command.server_run" class="Symfony\Bundle\WebServerBundle\Command\ServerRunCommand" public="false">
-      <tag name="console.command" command="server:run"/>
-      <argument>C:\xampp\htdocs\FSWD60-Adam-Gyarmati-CodeReview13/public</argument>
-      <argument>dev</argument>
-      <call method="setName">
-        <argument>server:run</argument>
-      </call>
-    </service>
-    <service id="web_server.command.server_start" class="Symfony\Bundle\WebServerBundle\Command\ServerStartCommand" public="false">
-      <tag name="console.command" command="server:start"/>
-      <argument>C:\xampp\htdocs\FSWD60-Adam-Gyarmati-CodeReview13/public</argument>
-      <argument>dev</argument>
-      <call method="setName">
-        <argument>server:start</argument>
-      </call>
-    </service>
-    <service id="web_server.command.server_stop" class="Symfony\Bundle\WebServerBundle\Command\ServerStopCommand" public="false">
-      <tag name="console.command" command="server:stop"/>
-      <call method="setName">
-        <argument>server:stop</argument>
-      </call>
-    </service>
-    <service id="web_server.command.server_status" class="Symfony\Bundle\WebServerBundle\Command\ServerStatusCommand" public="false">
-      <tag name="console.command" command="server:status"/>
-      <call method="setName">
-        <argument>server:status</argument>
-      </call>
-    </service>
-    <service id="web_server.command.server_log" class="Symfony\Bundle\WebServerBundle\Command\ServerLogCommand" public="false">
-      <tag name="console.command" command="server:log"/>
-      <call method="setName">
-        <argument>server:log</argument>
-      </call>
-    </service>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\PageController" class="AppBundle\Controller\PageController" public="true" autowire="true" abstract="true"/>
@@ -4122,7 +4066,7 @@
       <argument>true</argument>
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
-      <argument type="service" id="service_locator.iv.jde6"/>
+      <argument type="service" id="service_locator.n3zuwyt"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -4164,14 +4108,9 @@
         <argument key="doctrine:schema:validate">doctrine.schema_validate_command</argument>
         <argument key="doctrine:mapping:import">doctrine.mapping_import_command</argument>
         <argument key="security:check">sensio_distribution.security_checker.command</argument>
-        <argument key="server:run">web_server.command.server_run</argument>
-        <argument key="server:start">web_server.command.server_start</argument>
-        <argument key="server:stop">web_server.command.server_stop</argument>
-        <argument key="server:status">web_server.command.server_status</argument>
-        <argument key="server:log">web_server.command.server_log</argument>
       </argument>
     </service>
-    <service id="service_locator.iv.jde6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.n3zuwyt" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service" id="console.command.about"/>
@@ -4214,11 +4153,6 @@
         <argument key="sensio_distribution.security_checker.command" type="service" id="sensio_distribution.security_checker.command"/>
         <argument key="twig.command.debug" type="service" id="twig.command.debug"/>
         <argument key="twig.command.lint" type="service" id="twig.command.lint"/>
-        <argument key="web_server.command.server_log" type="service" id="web_server.command.server_log"/>
-        <argument key="web_server.command.server_run" type="service" id="web_server.command.server_run"/>
-        <argument key="web_server.command.server_start" type="service" id="web_server.command.server_start"/>
-        <argument key="web_server.command.server_status" type="service" id="web_server.command.server_status"/>
-        <argument key="web_server.command.server_stop" type="service" id="web_server.command.server_stop"/>
       </argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="false">

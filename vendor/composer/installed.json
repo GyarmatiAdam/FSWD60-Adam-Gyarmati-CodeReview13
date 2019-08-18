@@ -1,17 +1,17 @@
 [
     {
         "name": "composer/ca-bundle",
-        "version": "1.2.2",
-        "version_normalized": "1.2.2.0",
+        "version": "1.2.3",
+        "version_normalized": "1.2.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/composer/ca-bundle.git",
-            "reference": "ec2e24d4fa6a0d50d423794a56605ecec3401b85"
+            "reference": "f26a67e397be0e5c00d7c52ec7b5010098e15ce5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/composer/ca-bundle/zipball/ec2e24d4fa6a0d50d423794a56605ecec3401b85",
-            "reference": "ec2e24d4fa6a0d50d423794a56605ecec3401b85",
+            "url": "https://api.github.com/repos/composer/ca-bundle/zipball/f26a67e397be0e5c00d7c52ec7b5010098e15ce5",
+            "reference": "f26a67e397be0e5c00d7c52ec7b5010098e15ce5",
             "shasum": ""
         },
         "require": {
@@ -24,7 +24,7 @@
             "psr/log": "^1.0",
             "symfony/process": "^2.5 || ^3.0 || ^4.0"
         },
-        "time": "2019-08-01T07:52:17+00:00",
+        "time": "2019-08-02T09:05:43+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1530,6 +1530,62 @@
         ]
     },
     {
+        "name": "sensio/generator-bundle",
+        "version": "v3.1.7",
+        "version_normalized": "3.1.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
+            "reference": "28cbaa244bd0816fd8908b93f90380bcd7b67a65"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/28cbaa244bd0816fd8908b93f90380bcd7b67a65",
+            "reference": "28cbaa244bd0816fd8908b93f90380bcd7b67a65",
+            "shasum": ""
+        },
+        "require": {
+            "symfony/console": "~2.7|~3.0",
+            "symfony/framework-bundle": "~2.7|~3.0",
+            "symfony/process": "~2.7|~3.0",
+            "symfony/yaml": "~2.7|~3.0",
+            "twig/twig": "^1.28.2|^2.0"
+        },
+        "require-dev": {
+            "doctrine/orm": "~2.4",
+            "symfony/doctrine-bridge": "~2.7|~3.0",
+            "symfony/filesystem": "~2.7|~3.0",
+            "symfony/phpunit-bridge": "^3.3"
+        },
+        "time": "2017-12-07T15:36:41+00:00",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Sensio\\Bundle\\GeneratorBundle\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "This bundle generates code for you"
+    },
+    {
         "name": "sensiolabs/security-checker",
         "version": "v5.0.3",
         "version_normalized": "5.0.3.0",
@@ -1699,28 +1755,95 @@
         ]
     },
     {
-        "name": "symfony/polyfill-apcu",
-        "version": "v1.11.0",
-        "version_normalized": "1.11.0.0",
+        "name": "symfony/phpunit-bridge",
+        "version": "v3.4.30",
+        "version_normalized": "3.4.30.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/polyfill-apcu.git",
-            "reference": "a502face1da6a53289480166f24de2c3c68e5c3c"
+            "url": "https://github.com/symfony/phpunit-bridge.git",
+            "reference": "8f1f27c186496128b861810809c27d956d342417"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/a502face1da6a53289480166f24de2c3c68e5c3c",
-            "reference": "a502face1da6a53289480166f24de2c3c68e5c3c",
+            "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/8f1f27c186496128b861810809c27d956d342417",
+            "reference": "8f1f27c186496128b861810809c27d956d342417",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2019-02-06T07:57:58+00:00",
+        "conflict": {
+            "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
+        },
+        "suggest": {
+            "symfony/debug": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
+        },
+        "time": "2019-07-05T06:33:19+00:00",
+        "bin": [
+            "bin/simple-phpunit"
+        ],
+        "type": "symfony-bridge",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.4-dev"
+            },
+            "thanks": {
+                "name": "phpunit/phpunit",
+                "url": "https://github.com/sebastianbergmann/phpunit"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "bootstrap.php"
+            ],
+            "psr-4": {
+                "Symfony\\Bridge\\PhpUnit\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony PHPUnit Bridge",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/polyfill-apcu",
+        "version": "v1.12.0",
+        "version_normalized": "1.12.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-apcu.git",
+            "reference": "71ce80635d5dcd67772b4dda00b86068595f64d5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/71ce80635d5dcd67772b4dda00b86068595f64d5",
+            "reference": "71ce80635d5dcd67772b4dda00b86068595f64d5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2019-08-06T08:03:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.11-dev"
+                "dev-master": "1.12-dev"
             }
         },
         "installation-source": "dist",
@@ -1758,17 +1881,17 @@
     },
     {
         "name": "symfony/polyfill-ctype",
-        "version": "v1.11.0",
-        "version_normalized": "1.11.0.0",
+        "version": "v1.12.0",
+        "version_normalized": "1.12.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-ctype.git",
-            "reference": "82ebae02209c21113908c229e9883c419720738a"
+            "reference": "550ebaac289296ce228a706d0867afc34687e3f4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/82ebae02209c21113908c229e9883c419720738a",
-            "reference": "82ebae02209c21113908c229e9883c419720738a",
+            "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/550ebaac289296ce228a706d0867afc34687e3f4",
+            "reference": "550ebaac289296ce228a706d0867afc34687e3f4",
             "shasum": ""
         },
         "require": {
@@ -1777,11 +1900,11 @@
         "suggest": {
             "ext-ctype": "For best performance"
         },
-        "time": "2019-02-06T07:57:58+00:00",
+        "time": "2019-08-06T08:03:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.11-dev"
+                "dev-master": "1.12-dev"
             }
         },
         "installation-source": "dist",
@@ -1799,12 +1922,12 @@
         ],
         "authors": [
             {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            },
-            {
                 "name": "Gert de Pagter",
                 "email": "BackEndTea@gmail.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
             }
         ],
         "description": "Symfony polyfill for ctype functions",
@@ -1818,31 +1941,31 @@
     },
     {
         "name": "symfony/polyfill-intl-icu",
-        "version": "v1.11.0",
-        "version_normalized": "1.11.0.0",
+        "version": "v1.12.0",
+        "version_normalized": "1.12.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-intl-icu.git",
-            "reference": "999878a3a09d73cae157b0cf89bb6fb2cc073057"
+            "reference": "66810b9d6eb4af54d543867909d65ab9af654d7e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/999878a3a09d73cae157b0cf89bb6fb2cc073057",
-            "reference": "999878a3a09d73cae157b0cf89bb6fb2cc073057",
+            "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/66810b9d6eb4af54d543867909d65ab9af654d7e",
+            "reference": "66810b9d6eb4af54d543867909d65ab9af654d7e",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3",
-            "symfony/intl": "~2.3|~3.0|~4.0"
+            "symfony/intl": "~2.3|~3.0|~4.0|~5.0"
         },
         "suggest": {
             "ext-intl": "For best performance"
         },
-        "time": "2019-01-07T19:39:47+00:00",
+        "time": "2019-08-06T08:03:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.9-dev"
+                "dev-master": "1.12-dev"
             }
         },
         "installation-source": "dist",
@@ -1878,17 +2001,17 @@
     },
     {
         "name": "symfony/polyfill-mbstring",
-        "version": "v1.11.0",
-        "version_normalized": "1.11.0.0",
+        "version": "v1.12.0",
+        "version_normalized": "1.12.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-mbstring.git",
-            "reference": "fe5e94c604826c35a32fa832f35bd036b6799609"
+            "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fe5e94c604826c35a32fa832f35bd036b6799609",
-            "reference": "fe5e94c604826c35a32fa832f35bd036b6799609",
+            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b42a2f66e8f1b15ccf25652c3424265923eb4f17",
+            "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17",
             "shasum": ""
         },
         "require": {
@@ -1897,11 +2020,11 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2019-02-06T07:57:58+00:00",
+        "time": "2019-08-06T08:03:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.11-dev"
+                "dev-master": "1.12-dev"
             }
         },
         "installation-source": "dist",
@@ -1939,28 +2062,28 @@
     },
     {
         "name": "symfony/polyfill-php56",
-        "version": "v1.11.0",
-        "version_normalized": "1.11.0.0",
+        "version": "v1.12.0",
+        "version_normalized": "1.12.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-php56.git",
-            "reference": "f4dddbc5c3471e1b700a147a20ae17cdb72dbe42"
+            "reference": "0e3b212e96a51338639d8ce175c046d7729c3403"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/f4dddbc5c3471e1b700a147a20ae17cdb72dbe42",
-            "reference": "f4dddbc5c3471e1b700a147a20ae17cdb72dbe42",
+            "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/0e3b212e96a51338639d8ce175c046d7729c3403",
+            "reference": "0e3b212e96a51338639d8ce175c046d7729c3403",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3",
             "symfony/polyfill-util": "~1.0"
         },
-        "time": "2019-02-06T07:57:58+00:00",
+        "time": "2019-08-06T08:03:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.11-dev"
+                "dev-master": "1.12-dev"
             }
         },
         "installation-source": "dist",
@@ -1997,28 +2120,28 @@
     },
     {
         "name": "symfony/polyfill-php70",
-        "version": "v1.11.0",
-        "version_normalized": "1.11.0.0",
+        "version": "v1.12.0",
+        "version_normalized": "1.12.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-php70.git",
-            "reference": "bc4858fb611bda58719124ca079baff854149c89"
+            "reference": "54b4c428a0054e254223797d2713c31e08610831"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/bc4858fb611bda58719124ca079baff854149c89",
-            "reference": "bc4858fb611bda58719124ca079baff854149c89",
+            "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/54b4c428a0054e254223797d2713c31e08610831",
+            "reference": "54b4c428a0054e254223797d2713c31e08610831",
             "shasum": ""
         },
         "require": {
             "paragonie/random_compat": "~1.0|~2.0|~9.99",
             "php": ">=5.3.3"
         },
-        "time": "2019-02-06T07:57:58+00:00",
+        "time": "2019-08-06T08:03:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.11-dev"
+                "dev-master": "1.12-dev"
             }
         },
         "installation-source": "dist",
@@ -2058,27 +2181,27 @@
     },
     {
         "name": "symfony/polyfill-util",
-        "version": "v1.11.0",
-        "version_normalized": "1.11.0.0",
+        "version": "v1.12.0",
+        "version_normalized": "1.12.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-util.git",
-            "reference": "b46c6cae28a3106735323f00a0c38eccf2328897"
+            "reference": "4317de1386717b4c22caed7725350a8887ab205c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-util/zipball/b46c6cae28a3106735323f00a0c38eccf2328897",
-            "reference": "b46c6cae28a3106735323f00a0c38eccf2328897",
+            "url": "https://api.github.com/repos/symfony/polyfill-util/zipball/4317de1386717b4c22caed7725350a8887ab205c",
+            "reference": "4317de1386717b4c22caed7725350a8887ab205c",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2019-02-08T14:16:39+00:00",
+        "time": "2019-08-06T08:03:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.11-dev"
+                "dev-master": "1.12-dev"
             }
         },
         "installation-source": "dist",

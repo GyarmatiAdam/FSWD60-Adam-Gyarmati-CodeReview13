@@ -47,6 +47,10 @@ class AppKernel extends Kernel
     {
         return dirname(__DIR__).'/var/logs';
     }
+    public function getProjectDir()
+    {
+        return dirname(__DIR__);
+    }
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
