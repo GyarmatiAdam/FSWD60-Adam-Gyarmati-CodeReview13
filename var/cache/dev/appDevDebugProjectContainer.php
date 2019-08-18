@@ -16,6 +16,6 @@ if (!\class_exists(appDevDebugProjectContainer::class, false)) {
 
 return new \ContainerNadksxg\appDevDebugProjectContainer([
     'container.build_hash' => 'Nadksxg',
-    'container.build_id' => 'eb7340f8',
-    'container.build_time' => 1566052928,
+    'container.build_id' => '393b4e2c',
+    'container.build_time' => 1566112149,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerNadksxg');
