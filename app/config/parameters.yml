@@ -10,10 +10,3 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: ThisTokenIsNotSoSecretChangeIt
-    
-    psql_database_driver: pdo_pgsql
-    psql_database_host: ec2-54-227-245-146.compute-1.amazonaws.com
-    psql_database_port: 5432
-    psql_database_name: dcckfsh3ruc93r
-    psql_database_user: cbsorshuvktoss
-    psql_database_password: 0314734fefeb3ff0cb0b04208bda890109a1a2bda9dcaa46799d8195b644df8b

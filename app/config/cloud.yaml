@@ -1,6 +1,0 @@
-runtime:
-    extensions:
-        - pdo_pgsql
-
-relationships:
-    database: "mydatabase:postgresql"

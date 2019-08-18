@@ -50,9 +50,3 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
-    mydatabase:
-        # supported versions: 9.6, 10, 11
-        # 9.3 is also available but not maintained upstream
-        type: postgresql:11
-        disk: 1024
-
