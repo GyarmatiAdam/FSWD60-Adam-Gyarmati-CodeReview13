@@ -1,10 +1,10 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: 127.0.0.1
-    database_port: null
-    database_name: cr13_Adam_Gyarmati_bigevents
-    database_user: root
-    database_password: null
+    database_host: ec2-54-227-245-146.compute-1.amazonaws.com
+    database_port: 5432
+    database_name: dcckfsh3ruc93r
+    database_user: cbsorshuvktoss
+    database_password: 0314734fefeb3ff0cb0b04208bda890109a1a2bda9dcaa46799d8195b644df8b
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
