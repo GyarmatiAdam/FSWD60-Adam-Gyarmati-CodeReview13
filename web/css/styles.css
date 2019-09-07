@@ -49,6 +49,7 @@ body{
     z-index: 100;
     opacity: 1;
     background-color: chocolate;
+<<<<<<< HEAD
 }
 .indextable{
     width: 300px;
@@ -68,4 +69,6 @@ body{
 }
 .navbar-toggler-icon{
     color: #6b0012;
+=======
+>>>>>>> parent of f2922b9... final styleing done
 }

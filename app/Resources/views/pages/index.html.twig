@@ -24,13 +24,10 @@
     </div>
     <table>
     {% for event in events %}
-    <tbody style="margin:2rem; display:inline-block;" class="text-center img-thumbnail indextable">
+    <tbody style="margin:2rem; display:inline-block;" class="text-center img-thumbnail">
         <tr><td>{{ event.eventName }}</td></tr>
-        {% if event.eventImg == true %}
-            <tr><td><img class="img-fluid" src="{{asset('images/' ~ event.eventImg)}}" title="custome" alt="custome"></td></tr>
-        {% else %}
-            <tr><td><img class="img-fluid" src="{{asset('images/custome.jpg')}}" title="custome" alt="custome"></td></tr>
-        {% endif %}
+        <tr><td><img class="img-fluid" style="max-width: 100%; margin:auto;" src="{{asset('images/' ~ event.eventImg)}}" title="custome" alt="custome"></td></tr>
+        {# <tr><td><img src="{{ event.eventImg }}" class="rounded mx-auto d-block" alt="image"></td></tr> #}
         <tr><td>{{ event.eventType }}</td><tr>
         <tr><td>{{ event.eventDate}}</td></tr>
         <tr><td><a href="details/{{event.id}}" class="detailbutton btn btn-info btn-block">Details</a><tr><td>
